@@ -30,7 +30,7 @@
       --bg: #121212; --surface: #1E1E1E; --surface2: #2A2A2A;
       --text: #FFFFFF; --text2: #A0A0A0;
       --blue: #3B82F6; --amber: #F59E0B; --teal: #14B8A6; --purple: #8B5CF6;
-      --green: #4ADE80; --red: #F87171;
+      --green: #4ADE80; --red: #F87171; --orange: #FB923C;
       --border: #333333; --radius: 12px; --radius-sm: 8px;
     }
 
@@ -109,14 +109,17 @@
     }
     .settings-row { margin-bottom: 16px; }
     .settings-label { font-size: 0.85rem; color: var(--text2); margin-bottom: 6px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
-    .settings-input { background: var(--surface2); border: 1px solid var(--border); color: var(--text); padding: 12px 14px; border-radius: var(--radius-sm); font-size: 1rem; width: 100%; }
+    .settings-input {
+      background: var(--surface2); border: 1px solid var(--border); color: var(--text);
+      padding: 12px 14px; border-radius: var(--radius-sm); font-size: 1rem; width: 100%;
+    }
     .settings-input:focus { border-color: var(--blue); }
     .settings-btn-row { display: flex; gap: 10px; margin-top: 8px; }
     .settings-btn { flex: 1; padding: 13px; border-radius: var(--radius-sm); font-size: 0.9rem; font-weight: 600; transition: opacity 0.15s; }
     .settings-btn:hover { opacity: 0.85; }
-    .btn-primary { background: var(--blue); color: #fff; }
-    .btn-amber   { background: var(--amber); color: #000; }
-    .btn-teal    { background: var(--teal);  color: #000; }
+    .btn-primary { background: var(--blue);   color: #fff; }
+    .btn-amber   { background: var(--amber);  color: #000; }
+    .btn-teal    { background: var(--teal);   color: #000; }
     .btn-purple  { background: var(--purple); color: #fff; }
 
     /* WEEK DETAIL */
@@ -146,13 +149,13 @@
     .day-tile.blue:hover  { background: #3B82F625; }
     .day-tile.amber:hover { background: #F59E0B25; }
     .day-tile.teal:hover  { background: #14B8A625; }
-    .day-name { font-size: 1.1rem; font-weight: 700; }
-    .day-date { font-size: 0.8rem; color: var(--text2); margin-top: 3px; font-family: 'Roboto Mono', monospace; }
-    .day-sub  { font-size: 0.75rem; margin-top: 4px; font-weight: 600; }
+    .day-name  { font-size: 1.1rem; font-weight: 700; }
+    .day-date  { font-size: 0.8rem; color: var(--text2); margin-top: 3px; font-family: 'Roboto Mono', monospace; }
+    .day-sub   { font-size: 0.75rem; margin-top: 4px; font-weight: 600; }
     .day-check { font-size: 1.1rem; }
-    .day-tile.blue  .day-name,.day-tile.blue  .day-sub  { color: var(--blue); }
-    .day-tile.amber .day-name,.day-tile.amber .day-sub  { color: var(--amber); }
-    .day-tile.teal  .day-name,.day-tile.teal  .day-sub  { color: var(--teal); }
+    .day-tile.blue  .day-name, .day-tile.blue  .day-sub { color: var(--blue);  }
+    .day-tile.amber .day-name, .day-tile.amber .day-sub { color: var(--amber); }
+    .day-tile.teal  .day-name, .day-tile.teal  .day-sub { color: var(--teal);  }
 
     /* BODY STATS */
     #screen-bodystats { padding-bottom: 100px; }
@@ -189,8 +192,8 @@
       font-size: 1rem; font-weight: 700; letter-spacing: 0.3px; transition: opacity 0.15s, transform 0.1s;
     }
     .save-btn:active { transform: scale(0.98); opacity: 0.9; }
-    .save-btn.amber  { background: var(--amber); color: #000; }
-    .save-btn.teal   { background: var(--teal);  color: #000; }
+    .save-btn.amber  { background: var(--amber);  color: #000; }
+    .save-btn.teal   { background: var(--teal);   color: #000; }
     .save-btn.purple { background: var(--purple); color: #fff; }
 
     /* TOAST */
@@ -239,6 +242,26 @@
     .set-input:focus { border-color: var(--blue); }
     .set-input-reps   { width: 70px; }
     .set-input-weight { width: 80px; }
+
+    /* WARM-UP */
+    .warmup-block {
+      background: var(--surface); border: 1px solid var(--orange);
+      border-radius: var(--radius); margin: 0 16px 10px; padding: 14px 16px;
+    }
+    .warmup-row {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 10px 0; border-bottom: 1px solid var(--border);
+    }
+    .warmup-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .warmup-row:first-child { padding-top: 0; }
+    .warmup-ex-name { font-size: 0.9rem; font-weight: 600; color: var(--text); }
+    .warmup-ex-unit { font-size: 0.72rem; color: var(--text2); margin-top: 2px; }
+    .warmup-input {
+      background: var(--surface2); border: 1px solid var(--border); color: var(--text);
+      border-radius: var(--radius-sm); padding: 10px 12px; font-family: 'Roboto Mono', monospace;
+      font-size: 1rem; text-align: center; width: 90px; transition: border-color 0.15s;
+    }
+    .warmup-input:focus { border-color: var(--orange); }
 
     /* CARDIO */
     .cardio-block {
@@ -293,21 +316,23 @@
     .analysis-sub   { font-size: 0.72rem; color: var(--text2); margin-top: 4px; font-style: italic; }
     .analysis-status { font-size: 0.8rem; font-weight: 600; margin-top: 5px; }
     .analysis-warn  { font-size: 0.75rem; color: var(--amber); margin-top: 6px; display: flex; align-items: flex-start; gap: 5px; }
-    .status-good  { color: var(--green); }
-    .status-warn  { color: var(--amber); }
-    .status-bad   { color: var(--red); }
+    .status-good { color: var(--green); }
+    .status-warn { color: var(--amber); }
+    .status-bad  { color: var(--red);   }
     .progress-bar-wrap { margin-top: 8px; height: 6px; background: var(--surface2); border-radius: 3px; overflow: hidden; }
     .progress-bar-fill { height: 100%; border-radius: 3px; background: var(--blue); transition: width 0.4s ease; }
     .progress-bar-fill.amber  { background: var(--amber); }
-    .progress-bar-fill.teal   { background: var(--teal); }
-    .progress-bar-fill.purple { background: var(--purple); }
+    .progress-bar-fill.teal   { background: var(--teal);  }
+    .progress-bar-fill.purple { background: var(--purple);}
     .analysis-row-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
     .analysis-row-trio { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
 
-    /* MISC */
+    /* SUPPRESS SPIN BUTTONS */
     input[type=number]::-webkit-inner-spin-button,
     input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; }
     input[type=number] { -moz-appearance: textfield; }
+
+    /* CUSTOM SELECT ARROW */
     select {
       appearance: none; -webkit-appearance: none;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23A0A0A0' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
@@ -326,9 +351,7 @@
 
 <div class="toast" id="toast"></div>
 
-<!-- ═══════════════════════════════════════
-     HOME SCREEN
-═══════════════════════════════════════ -->
+<!-- ═══════════ HOME ═══════════ -->
 <div class="screen active" id="screen-home">
   <div class="home-header">
     <div class="app-title">Élan</div>
@@ -337,9 +360,7 @@
   <div class="weeks-grid" id="weeks-grid"></div>
 </div>
 
-<!-- ═══════════════════════════════════════
-     WEEK DETAIL SCREEN
-═══════════════════════════════════════ -->
+<!-- ═══════════ WEEK DETAIL ═══════════ -->
 <div class="screen" id="screen-week">
   <div class="top-bar">
     <button class="back-btn" id="week-back">← Back</button>
@@ -358,9 +379,7 @@
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════
-     BODY STATS SCREEN
-═══════════════════════════════════════ -->
+<!-- ═══════════ BODY STATS ═══════════ -->
 <div class="screen" id="screen-bodystats">
   <div class="top-bar">
     <button class="back-btn" id="bodystats-back">← Back</button>
@@ -368,65 +387,64 @@
     <div style="width:40px"></div>
   </div>
   <div class="stats-form">
-
     <div class="stats-field-row">
       <div class="field-left"><div class="field-name">Body Weight</div><div class="field-unit-small">kg</div></div>
-      <input type="number" class="num-input" id="bs-bodyWeight" step="0.1" placeholder="75.0" />
+      <input type="number" class="num-input" id="bs-bodyWeight" step="0.1" placeholder="75.0" min="0" />
     </div>
     <div class="stats-field-row">
       <div class="field-left"><div class="field-name">BMI</div><div class="field-unit-small">—</div></div>
       <div style="display:flex;flex-direction:column;align-items:flex-end">
-        <input type="number" class="num-input num-input-sm" id="bs-bmi" step="0.1" placeholder="24.0" />
+        <input type="number" class="num-input num-input-sm" id="bs-bmi" step="0.1" placeholder="24.0" min="0" />
         <div class="bmi-suggest" id="bmi-suggest"></div>
       </div>
     </div>
     <div class="stats-field-row">
       <div class="field-left"><div class="field-name">Body Fat</div><div class="field-unit-small">%</div></div>
-      <input type="number" class="num-input num-input-sm" id="bs-bodyFatPercentage" step="0.1" placeholder="18.0" />
+      <input type="number" class="num-input num-input-sm" id="bs-bodyFatPercentage" step="0.1" placeholder="18.0" min="0" />
     </div>
     <div class="stats-field-row">
       <div class="field-left"><div class="field-name">Muscle Rate</div><div class="field-unit-small">%</div></div>
-      <input type="number" class="num-input num-input-sm" id="bs-muscleRate" step="0.1" placeholder="40.0" />
+      <input type="number" class="num-input num-input-sm" id="bs-muscleRate" step="0.1" placeholder="40.0" min="0" />
     </div>
     <div class="stats-field-row">
       <div class="field-left"><div class="field-name">Body Water</div><div class="field-unit-small">%</div></div>
-      <input type="number" class="num-input num-input-sm" id="bs-bodyWater" step="0.1" placeholder="55.0" />
+      <input type="number" class="num-input num-input-sm" id="bs-bodyWater" step="0.1" placeholder="55.0" min="0" />
     </div>
     <div class="stats-field-row">
       <div class="field-left"><div class="field-name">Bone Mass</div><div class="field-unit-small">kg</div></div>
-      <input type="number" class="num-input num-input-sm" id="bs-boneMass" step="0.1" placeholder="3.2" />
+      <input type="number" class="num-input num-input-sm" id="bs-boneMass" step="0.1" placeholder="3.2" min="0" />
     </div>
     <div class="stats-field-row">
       <div class="field-left"><div class="field-name">BMR</div><div class="field-unit-small">kcal</div></div>
-      <input type="number" class="num-input" id="bs-bmr" placeholder="1800" />
+      <input type="number" class="num-input" id="bs-bmr" placeholder="1800" min="0" />
     </div>
     <div class="stats-field-row">
       <div class="field-left"><div class="field-name">Metabolic Age</div><div class="field-unit-small">years</div></div>
-      <input type="number" class="num-input num-input-sm" id="bs-metabolicAge" placeholder="33" />
+      <input type="number" class="num-input num-input-sm" id="bs-metabolicAge" placeholder="33" min="0" />
     </div>
     <div class="stats-field-row">
       <div class="field-left"><div class="field-name">Age</div><div class="field-unit-small">years</div></div>
-      <input type="number" class="num-input num-input-sm" id="bs-age" placeholder="35" />
+      <input type="number" class="num-input num-input-sm" id="bs-age" placeholder="35" min="0" />
     </div>
     <div class="stats-field-row">
       <div class="field-left"><div class="field-name">Visceral Fat</div><div class="field-unit-small">rating</div></div>
-      <input type="number" class="num-input num-input-sm" id="bs-visceralFat" placeholder="8" />
+      <input type="number" class="num-input num-input-sm" id="bs-visceralFat" placeholder="8" min="0" />
     </div>
     <div class="stats-field-row">
       <div class="field-left"><div class="field-name">Subcutaneous Fat</div><div class="field-unit-small">%</div></div>
-      <input type="number" class="num-input num-input-sm" id="bs-subcutaneousFat" step="0.1" placeholder="15.0" />
+      <input type="number" class="num-input num-input-sm" id="bs-subcutaneousFat" step="0.1" placeholder="15.0" min="0" />
     </div>
     <div class="stats-field-row">
       <div class="field-left"><div class="field-name">Protein Mass</div><div class="field-unit-small">kg</div></div>
-      <input type="number" class="num-input" id="bs-proteinMass" step="0.1" placeholder="14.0" />
+      <input type="number" class="num-input" id="bs-proteinMass" step="0.1" placeholder="14.0" min="0" />
     </div>
     <div class="stats-field-row">
       <div class="field-left"><div class="field-name">Muscle Mass</div><div class="field-unit-small">kg</div></div>
-      <input type="number" class="num-input" id="bs-muscleMass" step="0.1" placeholder="60.0" />
+      <input type="number" class="num-input" id="bs-muscleMass" step="0.1" placeholder="60.0" min="0" />
     </div>
     <div class="stats-field-row">
       <div class="field-left"><div class="field-name">Weight Without Fat</div><div class="field-unit-small">kg</div></div>
-      <input type="number" class="num-input" id="bs-weightWithoutFat" step="0.1" placeholder="62.0" />
+      <input type="number" class="num-input" id="bs-weightWithoutFat" step="0.1" placeholder="62.0" min="0" />
     </div>
     <div class="stats-field-row">
       <div class="field-left"><div class="field-name">Obesity Level</div><div class="field-unit-small">auto-suggests from BMI</div></div>
@@ -438,7 +456,6 @@
         <option value="Obese">Obese</option>
       </select>
     </div>
-
     <p class="stats-note">Saved per week · Used in daily analysis calculations</p>
   </div>
   <div class="save-btn-wrap">
@@ -446,9 +463,7 @@
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════
-     DAY DETAIL SCREEN (Mon–Fri)
-═══════════════════════════════════════ -->
+<!-- ═══════════ DAY (Mon–Fri) ═══════════ -->
 <div class="screen" id="screen-day">
   <div class="top-bar">
     <button class="back-btn" id="day-back">← Back</button>
@@ -460,20 +475,20 @@
   <div id="weight-exercises"></div>
   <div class="section-header">B · Bodyweight &amp; Core</div>
   <div id="bw-exercises"></div>
-  <div class="section-header">C · Cardio</div>
+  <div class="section-header">C · Warm-Up</div>
+  <div id="day-warmup"></div>
+  <div class="section-header">D · Cardio</div>
   <div id="day-cardio"></div>
-  <div class="section-header">D · Food</div>
+  <div class="section-header">E · Food</div>
   <div id="day-food"></div>
-  <div class="section-header">E · Analysis</div>
+  <div class="section-header">F · Analysis</div>
   <div class="analysis-grid" id="day-analysis"></div>
   <div class="save-btn-wrap">
     <button class="save-btn" id="save-day">Save Day</button>
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════
-     SATURDAY SCREEN
-═══════════════════════════════════════ -->
+<!-- ═══════════ SATURDAY ═══════════ -->
 <div class="screen" id="screen-sat">
   <div class="top-bar">
     <button class="back-btn" id="sat-back">← Back</button>
@@ -481,20 +496,20 @@
     <div style="width:40px"></div>
   </div>
   <div style="padding:4px 16px 0;font-size:0.8rem;color:var(--amber);font-weight:600;">Rest · Cheat Day</div>
-  <div class="section-header">C · Cardio</div>
+  <div class="section-header">C · Warm-Up</div>
+  <div id="sat-warmup"></div>
+  <div class="section-header">D · Cardio</div>
   <div id="sat-cardio"></div>
-  <div class="section-header">D · Food</div>
+  <div class="section-header">E · Food</div>
   <div id="sat-food"></div>
-  <div class="section-header">E · Analysis</div>
+  <div class="section-header">F · Analysis</div>
   <div class="analysis-grid" id="sat-analysis"></div>
   <div class="save-btn-wrap">
     <button class="save-btn amber" id="save-sat">Save Day</button>
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════
-     SUNDAY SCREEN
-═══════════════════════════════════════ -->
+<!-- ═══════════ SUNDAY ═══════════ -->
 <div class="screen" id="screen-sun">
   <div class="top-bar">
     <button class="back-btn" id="sun-back">← Back</button>
@@ -502,20 +517,20 @@
     <div style="width:40px"></div>
   </div>
   <div style="padding:4px 16px 0;font-size:0.8rem;color:var(--teal);font-weight:600;">Fasting Day</div>
-  <div class="section-header">C · Cardio</div>
+  <div class="section-header">C · Warm-Up</div>
+  <div id="sun-warmup"></div>
+  <div class="section-header">D · Cardio</div>
   <div id="sun-cardio"></div>
-  <div class="section-header">D · Food</div>
+  <div class="section-header">E · Food</div>
   <div id="sun-food"></div>
-  <div class="section-header">E · Analysis</div>
+  <div class="section-header">F · Analysis</div>
   <div class="analysis-grid" id="sun-analysis"></div>
   <div class="save-btn-wrap">
     <button class="save-btn teal" id="save-sun">Save Day</button>
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════
-     SETTINGS MODAL
-═══════════════════════════════════════ -->
+<!-- ═══════════ SETTINGS MODAL ═══════════ -->
 <div class="modal-overlay" id="settings-modal">
   <div class="modal-sheet">
     <div class="modal-title">
@@ -545,8 +560,7 @@
 <script>
 'use strict';
 
-// ─── CONSTANTS ───────────────────────────────────────────────────────────────
-
+// ─── CONSTANTS ────────────────────────────────────────────────────────────────
 const ALL_EXERCISES = [
   "Vertical Chest Press Machine","Bench Press Smith Machine","Incline Dumbbell Press",
   "Flat Dumbbell Press","Pec Fly","Cable Tricep Pushdown","Overhead Dumbbell Tricep",
@@ -573,15 +587,27 @@ const DAY_DEFAULTS = {
 const WEEKDAYS   = ["monday","tuesday","wednesday","thursday","friday","saturday","sunday"];
 const DAY_LABELS = { monday:"Monday",tuesday:"Tuesday",wednesday:"Wednesday",thursday:"Thursday",friday:"Friday",saturday:"Saturday",sunday:"Sunday" };
 
-// ─── STATE ───────────────────────────────────────────────────────────────────
+// Warm-up exercise definitions
+const WARMUP_EXERCISES = [
+  { key: 'squats',      label: 'Bodyweight Squats', base: 0.32 },
+  { key: 'pushups',     label: 'Push-Ups',          base: 0.29 },
+  { key: 'jumpingJacks',label: 'Jumping Jacks',     base: 0.20 }
+];
+
+// ─── STATE ────────────────────────────────────────────────────────────────────
 let currentWeek = 1;
 let currentDay  = "monday";
 
-// ─── UTILS ───────────────────────────────────────────────────────────────────
+// ─── UTILS ────────────────────────────────────────────────────────────────────
 const $  = id  => document.getElementById(id);
 const QA = sel => document.querySelectorAll(sel);
-const n  = v   => { const p = parseFloat(v); return isNaN(p) ? 0 : p; };
-const ri = v   => Math.round(n(v));
+
+// Safe number — returns 0 for empty / NaN / null / undefined
+const n = v => { const p = parseFloat(v); return isNaN(p) ? 0 : p; };
+
+// Safe value for inputs — returns '' when value is 0, null, or undefined
+// so fields never show a white "0" by default
+const safeVal = v => (v !== null && v !== undefined && v !== 0 && v !== '') ? v : '';
 
 function lsGet(key)      { try { return JSON.parse(localStorage.getItem(key)); } catch(e){ return null; } }
 function lsSet(key, val) { localStorage.setItem(key, JSON.stringify(val)); }
@@ -592,18 +618,15 @@ function showToast(msg, ms=2200) {
   t.classList.add('show');
   setTimeout(() => t.classList.remove('show'), ms);
 }
-
 function showScreen(id) {
   QA('.screen').forEach(s => s.classList.remove('active'));
   $(id).classList.add('active');
   window.scrollTo(0, 0);
 }
-
 function getStartDate() {
   const s = lsGet('elan_settings');
   return (s && s.startDate) ? new Date(s.startDate) : null;
 }
-
 function getWeekDates(w) {
   const sd = getStartDate();
   if (!sd) return { start:null, end:null, days:[] };
@@ -615,7 +638,6 @@ function getWeekDates(w) {
   }
   return { start:days[0], end:days[6], days };
 }
-
 function fmt(d)        { return d ? d.toLocaleDateString('en-GB',{day:'numeric',month:'short'}) : '—'; }
 function fmtFull(d)    { return d ? d.toLocaleDateString('en-GB',{weekday:'short',day:'numeric',month:'short',year:'numeric'}) : '—'; }
 function fmtRange(s,e) { return s ? `${fmt(s)} – ${fmt(e)}` : 'Set start date in ⚙️'; }
@@ -629,7 +651,14 @@ function bmiToObesity(bmi) {
   return 'Obese';
 }
 
-// ─── EXERCISE DROPDOWN ───────────────────────────────────────────────────────
+// ─── AGE FACTOR (shared by walking + warm-up) ─────────────────────────────────
+function getAgeFactor(age) {
+  if (age < 30)  return 1.00;
+  if (age <= 50) return 0.95;
+  return 0.90;
+}
+
+// ─── EXERCISE DROPDOWN ────────────────────────────────────────────────────────
 function exOptions(selected) {
   let html = '';
   if (!selected || !selected.trim()) html += `<option value="">Choose Exercise</option>`;
@@ -647,12 +676,16 @@ function buildSetRows(num, hasWeight, savedSets) {
   let html = '';
   for (let i = 0; i < num; i++) {
     const s  = (savedSets && savedSets[i]) || {};
-    const rv = s.reps   !== undefined ? s.reps   : '';
-    const wv = s.weight !== undefined ? s.weight : '';
+    const rv = safeVal(s.reps);
+    const wv = safeVal(s.weight);
     html += `<div class="set-row">
       <span class="set-label">Set ${i+1}</span>
-      <input type="number" class="set-input set-input-reps"   placeholder="Reps" data-si="${i}" data-field="reps"   value="${rv}" />
-      ${hasWeight ? `<input type="number" class="set-input set-input-weight" placeholder="kg" step="0.5" data-si="${i}" data-field="weight" value="${wv}" />` : ''}
+      <input type="number" class="set-input set-input-reps" placeholder="0" min="0"
+        data-si="${i}" data-field="reps" value="${rv}" />
+      ${hasWeight
+        ? `<input type="number" class="set-input set-input-weight" placeholder="0" min="0" step="0.5"
+             data-si="${i}" data-field="weight" value="${wv}" />`
+        : ''}
     </div>`;
   }
   return html;
@@ -661,7 +694,7 @@ function buildSetRows(num, hasWeight, savedSets) {
 // ─── BUILD EXERCISE BLOCK ─────────────────────────────────────────────────────
 function buildExBlock(idx, defaultEx, hasWeight, savedArr, pfx) {
   const saved   = savedArr && savedArr[idx] ? savedArr[idx] : null;
-  const exName  = saved ? (saved.name || saved.exercise || defaultEx || '') : (defaultEx || '');
+  const exName  = saved ? (saved.name || defaultEx || '') : (defaultEx || '');
   const numSets = saved && saved.sets && saved.sets.length ? saved.sets.length : 3;
   const maxSets = hasWeight ? 6 : 4;
   let sOpts = '';
@@ -678,49 +711,96 @@ function buildExBlock(idx, defaultEx, hasWeight, savedArr, pfx) {
   </div>`;
 }
 
+// ─── BUILD WARM-UP ────────────────────────────────────────────────────────────
+function buildWarmup(containerId, savedWarmup) {
+  const w   = savedWarmup || {};
+  const ctx = containerId.split('-')[0]; // 'day' | 'sat' | 'sun'
+
+  $(containerId).innerHTML = `
+    <div class="warmup-block">
+      ${WARMUP_EXERCISES.map(ex => `
+        <div class="warmup-row">
+          <div class="field-left">
+            <div class="warmup-ex-name">🔥 ${ex.label}</div>
+            <div class="warmup-ex-unit">Total reps</div>
+          </div>
+          <input type="number" class="warmup-input"
+            id="${containerId}-${ex.key}"
+            placeholder="0" min="0"
+            value="${safeVal(w[ex.key])}" />
+        </div>`).join('')}
+    </div>`;
+
+  $(containerId).querySelectorAll('input').forEach(inp => {
+    inp.addEventListener('input', () => updateAnalysis(ctx));
+    inp.addEventListener('blur',  () => triggerAutoSave(ctx));
+  });
+}
+
+// ─── COLLECT WARM-UP ─────────────────────────────────────────────────────────
+function collectWarmup(containerId) {
+  const out = {};
+  WARMUP_EXERCISES.forEach(ex => {
+    out[ex.key] = n($(`${containerId}-${ex.key}`)?.value);
+  });
+  return out;
+}
+
+// ─── CALC WARM-UP CALORIES ───────────────────────────────────────────────────
+function calcWarmupCalories(warmup, bodyWeight, age) {
+  if (!bodyWeight || !age) return 0;
+  const af = getAgeFactor(age);
+  const wf = bodyWeight / 70;
+  let cal = 0;
+  WARMUP_EXERCISES.forEach(ex => {
+    cal += n(warmup[ex.key]) * ex.base * af * wf;
+  });
+  return Math.round(cal);
+}
+
 // ─── BUILD CARDIO ─────────────────────────────────────────────────────────────
 function buildCardio(containerId, savedCardio) {
   const c  = savedCardio || {};
   const tm = c.treadmill  || {};
   const el = c.elliptical || {};
   const bk = c.bike       || {};
-  const os = c.overallSteps !== undefined ? c.overallSteps : '';
+  const os = safeVal(c.overallSteps);
 
   $(containerId).innerHTML = `
     <div class="cardio-block">
       <div class="cardio-machine-name">🏃 Treadmill</div>
       <div class="cardio-fields">
         <div class="cardio-field"><label>Steps</label>
-          <input type="number" class="cardio-input cardio-input-wide" id="${containerId}-tm-steps"
-            placeholder="0" value="${tm.steps !== undefined ? tm.steps : ''}" /></div>
+          <input type="number" class="cardio-input cardio-input-wide"
+            id="${containerId}-tm-steps" placeholder="0" min="0" value="${safeVal(tm.steps)}" /></div>
         <div class="cardio-field"><label>Calories Burned</label>
-          <input type="number" class="cardio-input" id="${containerId}-tm-cal"
-            placeholder="0" value="${tm.calories !== undefined ? tm.calories : ''}" /></div>
+          <input type="number" class="cardio-input"
+            id="${containerId}-tm-cal" placeholder="0" min="0" value="${safeVal(tm.calories)}" /></div>
         <div class="cardio-field"><label>Time (min)</label>
-          <input type="number" class="cardio-input" id="${containerId}-tm-time"
-            placeholder="0" value="${tm.time !== undefined ? tm.time : ''}" /></div>
+          <input type="number" class="cardio-input"
+            id="${containerId}-tm-time" placeholder="0" min="0" value="${safeVal(tm.time)}" /></div>
       </div>
     </div>
     <div class="cardio-block">
       <div class="cardio-machine-name">🔄 Elliptical</div>
       <div class="cardio-fields">
         <div class="cardio-field"><label>Calories Burned</label>
-          <input type="number" class="cardio-input" id="${containerId}-el-cal"
-            placeholder="0" value="${el.calories !== undefined ? el.calories : ''}" /></div>
+          <input type="number" class="cardio-input"
+            id="${containerId}-el-cal" placeholder="0" min="0" value="${safeVal(el.calories)}" /></div>
         <div class="cardio-field"><label>Time (min)</label>
-          <input type="number" class="cardio-input" id="${containerId}-el-time"
-            placeholder="0" value="${el.time !== undefined ? el.time : ''}" /></div>
+          <input type="number" class="cardio-input"
+            id="${containerId}-el-time" placeholder="0" min="0" value="${safeVal(el.time)}" /></div>
       </div>
     </div>
     <div class="cardio-block">
       <div class="cardio-machine-name">🚴 Upright / Spin Bike</div>
       <div class="cardio-fields">
         <div class="cardio-field"><label>Calories Burned</label>
-          <input type="number" class="cardio-input" id="${containerId}-bk-cal"
-            placeholder="0" value="${bk.calories !== undefined ? bk.calories : ''}" /></div>
+          <input type="number" class="cardio-input"
+            id="${containerId}-bk-cal" placeholder="0" min="0" value="${safeVal(bk.calories)}" /></div>
         <div class="cardio-field"><label>Time (min)</label>
-          <input type="number" class="cardio-input" id="${containerId}-bk-time"
-            placeholder="0" value="${bk.time !== undefined ? bk.time : ''}" /></div>
+          <input type="number" class="cardio-input"
+            id="${containerId}-bk-time" placeholder="0" min="0" value="${safeVal(bk.time)}" /></div>
       </div>
     </div>
     <div class="overall-steps-block">
@@ -728,8 +808,8 @@ function buildCardio(containerId, savedCardio) {
         <div class="overall-steps-label">👣 Overall Steps</div>
         <div class="overall-steps-sub">Overall Steps (including treadmill + walking)</div>
       </div>
-      <input type="number" class="overall-steps-input" id="${containerId}-overall-steps"
-        placeholder="Total daily steps" value="${os}" />
+      <input type="number" class="overall-steps-input"
+        id="${containerId}-overall-steps" placeholder="0" min="0" value="${os}" />
     </div>`;
 
   const ctx = containerId.split('-')[0];
@@ -746,18 +826,18 @@ function buildFood(containerId, savedFood) {
     <div class="food-block">
       <div class="food-row">
         <div><div class="food-label">Total Calories</div><div class="food-unit">kcal</div></div>
-        <input type="number" class="food-input" id="${containerId}-kcal"
-          placeholder="0" value="${f.calories !== undefined ? f.calories : ''}" />
+        <input type="number" class="food-input"
+          id="${containerId}-kcal" placeholder="0" min="0" value="${safeVal(f.calories)}" />
       </div>
       <div class="food-row">
         <div><div class="food-label">Protein</div><div class="food-unit">g</div></div>
-        <input type="number" class="food-input" id="${containerId}-protein"
-          placeholder="0" value="${f.protein !== undefined ? f.protein : ''}" />
+        <input type="number" class="food-input"
+          id="${containerId}-protein" placeholder="0" min="0" value="${safeVal(f.protein)}" />
       </div>
       <div class="food-row">
         <div><div class="food-label">Fiber</div><div class="food-unit">g</div></div>
-        <input type="number" class="food-input" id="${containerId}-fiber"
-          placeholder="0" value="${f.fiber !== undefined ? f.fiber : ''}" />
+        <input type="number" class="food-input"
+          id="${containerId}-fiber" placeholder="0" min="0" value="${safeVal(f.fiber)}" />
       </div>
     </div>`;
   const ctx = containerId.split('-')[0];
@@ -770,7 +850,7 @@ function buildFood(containerId, savedFood) {
 // ─── COLLECT CARDIO ───────────────────────────────────────────────────────────
 function collectCardio(cId) {
   return {
-    treadmill:  { steps: n($(`${cId}-tm-steps`)?.value), calories: n($(`${cId}-tm-cal`)?.value),  time: n($(`${cId}-tm-time`)?.value) },
+    treadmill:  { steps: n($(`${cId}-tm-steps`)?.value),  calories: n($(`${cId}-tm-cal`)?.value),  time: n($(`${cId}-tm-time`)?.value) },
     elliptical: { calories: n($(`${cId}-el-cal`)?.value), time: n($(`${cId}-el-time`)?.value) },
     bike:       { calories: n($(`${cId}-bk-cal`)?.value), time: n($(`${cId}-bk-time`)?.value) },
     overallSteps: n($(`${cId}-overall-steps`)?.value)
@@ -792,8 +872,8 @@ function collectExercises(pfx, count) {
   for (let i = 0; i < count; i++) {
     const block = document.querySelector(`.exercise-block[data-idx="${i}"][data-pfx="${pfx}"]`);
     if (!block) { out.push({ name:'', sets:[] }); continue; }
-    const nm = block.querySelector('.ex-select').value;
-    const ns = parseInt(block.querySelector('.sets-select').value) || 1;
+    const nm   = block.querySelector('.ex-select').value;
+    const ns   = parseInt(block.querySelector('.sets-select').value) || 1;
     const sets = [];
     for (let s = 0; s < ns; s++) {
       const rEl = block.querySelector(`input[data-si="${s}"][data-field="reps"]`);
@@ -805,39 +885,30 @@ function collectExercises(pfx, count) {
   return out;
 }
 
-// ─── WALKING CALORIE CALCULATION ──────────────────────────────────────────────
+// ─── WALKING CALORIE CALC ────────────────────────────────────────────────────
 function calcWalkingCalories(overallSteps, treadmillSteps, bodyWeight, age) {
-  if (!bodyWeight || !age) return { walkingCal: 0, missingStats: true };
+  if (!bodyWeight || !age) return { walkingCal: 0, walkingSteps: 0, missingStats: true };
   const walkingSteps = Math.max(0, overallSteps - treadmillSteps);
-  let ageFactor = 1.00;
-  if (age >= 30 && age <= 50) ageFactor = 0.95;
-  else if (age > 50)          ageFactor = 0.90;
-  const walkingCal = Math.round(walkingSteps * bodyWeight * 0.00057 * ageFactor);
+  const walkingCal   = Math.round(walkingSteps * bodyWeight * 0.00057 * getAgeFactor(age));
   return { walkingCal, walkingSteps, missingStats: false };
 }
 
-// ─── EXERCISE CALORIE ESTIMATION ─────────────────────────────────────────────
+// ─── EXERCISE CALORIE ESTIMATION (Mon–Fri) ────────────────────────────────────
 function calcExerciseCalories() {
   const wt = collectExercises('wt', 7);
   const bw = collectExercises('bw', 6);
-
   let totalWeightedVol = 0;
-  wt.forEach(ex => {
-    ex.sets.forEach(s => { totalWeightedVol += s.reps * s.weight; });
-  });
-
+  wt.forEach(ex => ex.sets.forEach(s => { totalWeightedVol += s.reps * s.weight; }));
   let totalBwReps = 0;
-  bw.forEach(ex => {
-    ex.sets.forEach(s => { totalBwReps += s.reps; });
-  });
-
-  const weightedCal    = Math.round(totalWeightedVol * 0.03);
-  const bodyweightCal  = Math.round(totalBwReps * 0.5);
-  const totalExCal     = weightedCal + bodyweightCal;
-  return { weightedCal, bodyweightCal, totalExCal };
+  bw.forEach(ex => ex.sets.forEach(s => { totalBwReps += s.reps; }));
+  return {
+    weightedCal:   Math.round(totalWeightedVol * 0.03),
+    bodyweightCal: Math.round(totalBwReps * 0.5),
+    totalExCal:    Math.round(totalWeightedVol * 0.03) + Math.round(totalBwReps * 0.5)
+  };
 }
 
-// ─── WORKOUT COMPLETION ───────────────────────────────────────────────────────
+// ─── WORKOUT COMPLETION (Mon–Fri, 13 exercises only) ─────────────────────────
 function calcWorkoutCompletion() {
   const wt   = collectExercises('wt', 7);
   const bw   = collectExercises('bw', 6);
@@ -845,13 +916,14 @@ function calcWorkoutCompletion() {
   return Math.round((done / 13) * 100);
 }
 
-// ─── UPDATE ANALYSIS ──────────────────────────────────────────────────────────
+// ─── UPDATE ANALYSIS ─────────────────────────────────────────────────────────
 function updateAnalysis(ctx) {
-  const cId    = `${ctx}-cardio`;
-  const fId    = `${ctx}-food`;
-  const isDay  = ctx === 'day';
-  const isSat  = ctx === 'sat';
-  const barCls = isSat ? 'amber' : ctx==='sun' ? 'teal' : '';
+  const cId   = `${ctx}-cardio`;
+  const fId   = `${ctx}-food`;
+  const wuId  = `${ctx}-warmup`;
+  const isDay = ctx === 'day';
+  const isSat = ctx === 'sat';
+  const barCls = isSat ? 'amber' : ctx === 'sun' ? 'teal' : '';
 
   // Body stats
   const bs         = lsGet(`elan_week_${currentWeek}_bodystats`) || {};
@@ -860,140 +932,149 @@ function updateAnalysis(ctx) {
   const bmr        = n(bs.bmr);
   const hasStats   = bodyWeight > 0 && age > 0;
 
-  // Cardio
+  // Inputs
   const cardio = collectCardio(cId);
   const food   = collectFood(fId);
+  const warmup = collectWarmup(wuId);
 
-  const tmCal   = cardio.treadmill.calories;
-  const elCal   = cardio.elliptical.calories;
-  const bkCal   = cardio.bike.calories;
-  const tmTime  = cardio.treadmill.time;
-  const elTime  = cardio.elliptical.time;
-  const bkTime  = cardio.bike.time;
+  // Cardio
+  const tmCal  = cardio.treadmill.calories;
+  const elCal  = cardio.elliptical.calories;
+  const bkCal  = cardio.bike.calories;
+  const tmTime = cardio.treadmill.time;
+  const elTime = cardio.elliptical.time;
+  const bkTime = cardio.bike.time;
   const overallSteps   = cardio.overallSteps;
   const treadmillSteps = cardio.treadmill.steps;
-
-  // Walking calories
-  const { walkingCal, walkingSteps, missingStats } = calcWalkingCalories(overallSteps, treadmillSteps, bodyWeight, age);
-  const totalStepsCal   = tmCal + walkingCal;
-  const totalCardioCal  = totalStepsCal + elCal + bkCal;
   const totalCardioTime = tmTime + elTime + bkTime;
+
+  // Walking
+  const { walkingCal, walkingSteps } = calcWalkingCalories(overallSteps, treadmillSteps, bodyWeight, age);
+  const totalStepsCal  = tmCal + walkingCal;
+  const totalCardioCal = totalStepsCal + elCal + bkCal;
+
+  // Warm-up calories
+  const wuCal = calcWarmupCalories(warmup, bodyWeight, age);
 
   // Exercise calories (weekdays only)
   let exCal = 0;
+  let exDetails = null;
   if (isDay) {
-    const ec = calcExerciseCalories();
-    exCal = ec.totalExCal;
+    exDetails = calcExerciseCalories();
+    exCal     = exDetails.totalExCal;
   }
 
   // Totals
-  const totalBurned = totalCardioCal + exCal;
+  const totalBurned = totalCardioCal + wuCal + exCal;
   const netBalance  = food.calories - (bmr + totalBurned);
 
-  // Status
+  // Status labels
   let calStatus, calClass;
-  if      (netBalance < 0)   { calStatus = 'Calorie Deficit ✓'; calClass = 'status-good'; }
-  else if (netBalance <= 200){ calStatus = 'Balanced';           calClass = 'status-warn'; }
-  else                       { calStatus = 'Calorie Surplus ↑';  calClass = 'status-bad';  }
+  if      (netBalance < 0)    { calStatus = 'Calorie Deficit ✓'; calClass = 'status-good'; }
+  else if (netBalance <= 200) { calStatus = 'Balanced';           calClass = 'status-warn'; }
+  else                        { calStatus = 'Calorie Surplus ↑';  calClass = 'status-bad';  }
 
-  // Protein / fiber (fixed targets)
-  const proteinTarget = 100;
-  const fiberTarget   = 25;
-  const proteinPct = Math.min(Math.round((food.protein / proteinTarget) * 100), 100);
-  const fiberPct   = Math.min(Math.round((food.fiber   / fiberTarget)   * 100), 100);
-  const proteinStatus = food.protein >= proteinTarget
+  const proteinPct    = Math.min(Math.round((food.protein / 100) * 100), 100);
+  const fiberPct      = Math.min(Math.round((food.fiber   / 25)  * 100), 100);
+  const proteinStatus = food.protein >= 100
     ? '<span class="status-good">Protein Target Met ✓</span>'
     : '<span class="status-warn">Below Protein Target</span>';
 
-  // Missing stats warning
+  // Warning card if stats missing
   const statsWarn = (!hasStats || !bmr)
-    ? `<div class="analysis-warn">⚠️ <span>Enter Body Weight, Age and BMR in Body Stats for accurate calorie estimates.</span></div>`
+    ? `<div class="analysis-card analysis-warn">⚠️ <span>Enter Body Weight, Age and BMR in Body Stats for accurate calorie estimates.</span></div>`
     : '';
 
-  // Walking calories note
-  const walkNote = hasStats
-    ? `<div class="analysis-sub">Walking steps: ${(walkingSteps||0).toLocaleString()} · Walking calories are estimated from non-treadmill steps using your body weight and age.</div>`
-    : '';
-
-  // Build HTML
   let html = statsWarn;
 
-  // Cardio breakdown
+  // ── Cardio breakdown ──
   html += `
   <div class="analysis-row-trio">
     <div class="analysis-card">
-      <div class="analysis-label">Treadmill Calories</div>
-      <div class="analysis-value">${tmCal} <span style="font-size:.65rem;color:var(--text2)">kcal</span></div>
+      <div class="analysis-label">Treadmill Cal</div>
+      <div class="analysis-value">${tmCal}<span style="font-size:.65rem;color:var(--text2)"> kcal</span></div>
     </div>
     <div class="analysis-card">
-      <div class="analysis-label">Walking Calories</div>
-      <div class="analysis-value">${walkingCal} <span style="font-size:.65rem;color:var(--text2)">kcal</span></div>
+      <div class="analysis-label">Walking Cal</div>
+      <div class="analysis-value">${walkingCal}<span style="font-size:.65rem;color:var(--text2)"> kcal</span></div>
     </div>
     <div class="analysis-card">
       <div class="analysis-label">Total Step Cal</div>
-      <div class="analysis-value">${totalStepsCal} <span style="font-size:.65rem;color:var(--text2)">kcal</span></div>
+      <div class="analysis-value">${totalStepsCal}<span style="font-size:.65rem;color:var(--text2)"> kcal</span></div>
     </div>
   </div>
-  ${walkNote ? `<div class="analysis-card"><div class="analysis-sub" style="margin-top:0">${walkNote}</div></div>` : ''}
+  <div class="analysis-card">
+    <div class="analysis-sub" style="margin-top:0">
+      Walking steps: ${(walkingSteps||0).toLocaleString()} · Walking calories are estimated from non-treadmill steps using your body weight and age.
+    </div>
+  </div>
   <div class="analysis-row-trio">
     <div class="analysis-card">
       <div class="analysis-label">Elliptical Cal</div>
-      <div class="analysis-value">${elCal} <span style="font-size:.65rem;color:var(--text2)">kcal</span></div>
+      <div class="analysis-value">${elCal}<span style="font-size:.65rem;color:var(--text2)"> kcal</span></div>
     </div>
     <div class="analysis-card">
-      <div class="analysis-label">Bike Calories</div>
-      <div class="analysis-value">${bkCal} <span style="font-size:.65rem;color:var(--text2)">kcal</span></div>
+      <div class="analysis-label">Bike Cal</div>
+      <div class="analysis-value">${bkCal}<span style="font-size:.65rem;color:var(--text2)"> kcal</span></div>
     </div>
     <div class="analysis-card">
       <div class="analysis-label">Total Cardio Cal</div>
-      <div class="analysis-value">${totalCardioCal} <span style="font-size:.65rem;color:var(--text2)">kcal</span></div>
+      <div class="analysis-value">${totalCardioCal}<span style="font-size:.65rem;color:var(--text2)"> kcal</span></div>
     </div>
   </div>`;
 
-  // Exercise calories (weekday only)
-  if (isDay) {
-    const ec = calcExerciseCalories();
-    html += `<div class="analysis-card">
-      <div class="analysis-label">Est. Exercise Calories Burned</div>
-      <div class="analysis-value">${ec.totalExCal} <span style="font-size:.65rem;color:var(--text2)">kcal</span></div>
-      <div class="analysis-sub">Exercise calories are estimated from workout volume and reps.</div>
-    </div>`;
+  // ── Warm-up calories ──
+  html += `
+  <div class="analysis-card">
+    <div class="analysis-label">Warm-Up Calories Burned</div>
+    <div class="analysis-value">${wuCal}<span style="font-size:.65rem;color:var(--text2)"> kcal</span></div>
+    <div class="analysis-sub">Warm-up calories are estimated based on reps, body weight, and age.</div>
+  </div>`;
+
+  // ── Exercise calories (Mon–Fri only) ──
+  if (isDay && exDetails) {
+    html += `
+  <div class="analysis-card">
+    <div class="analysis-label">Est. Exercise Calories Burned</div>
+    <div class="analysis-value">${exDetails.totalExCal}<span style="font-size:.65rem;color:var(--text2)"> kcal</span></div>
+    <div class="analysis-sub">Exercise calories are estimated from workout volume and reps.</div>
+  </div>`;
   }
 
-  // Total burned + net balance
+  // ── Total burned + net balance ──
   html += `
   <div class="analysis-row-pair">
     <div class="analysis-card">
       <div class="analysis-label">Total Calories Burned</div>
-      <div class="analysis-value">${totalBurned} <span style="font-size:.65rem;color:var(--text2)">kcal</span></div>
+      <div class="analysis-value">${totalBurned}<span style="font-size:.65rem;color:var(--text2)"> kcal</span></div>
     </div>
     <div class="analysis-card">
       <div class="analysis-label">Net Daily Energy Balance</div>
-      <div class="analysis-value">${netBalance > 0 ? '+' : ''}${netBalance} <span style="font-size:.65rem;color:var(--text2)">kcal</span></div>
+      <div class="analysis-value">${netBalance > 0 ? '+' : ''}${netBalance}<span style="font-size:.65rem;color:var(--text2)"> kcal</span></div>
       <div class="analysis-status ${calClass}">${calStatus}</div>
     </div>
   </div>`;
 
-  // Protein + fiber
+  // ── Protein + Fiber ──
   html += `
   <div class="analysis-card">
     <div class="analysis-label">Protein vs Target (100g)</div>
-    <div class="analysis-value">${food.protein}g / ${proteinTarget}g</div>
+    <div class="analysis-value">${food.protein}g / 100g</div>
     <div class="progress-bar-wrap"><div class="progress-bar-fill ${barCls}" style="width:${proteinPct}%"></div></div>
     <div class="analysis-status" style="margin-top:6px">${proteinStatus}</div>
   </div>
   <div class="analysis-card">
     <div class="analysis-label">Fiber vs Target (25g)</div>
-    <div class="analysis-value">${food.fiber}g / ${fiberTarget}g</div>
+    <div class="analysis-value">${food.fiber}g / 25g</div>
     <div class="progress-bar-wrap"><div class="progress-bar-fill ${barCls}" style="width:${fiberPct}%"></div></div>
   </div>`;
 
-  // Cardio time + overall steps
+  // ── Cardio time + Overall steps ──
   html += `
   <div class="analysis-row-pair">
     <div class="analysis-card">
       <div class="analysis-label">Total Cardio Time</div>
-      <div class="analysis-value">${totalCardioTime} <span style="font-size:.65rem;color:var(--text2)">min</span></div>
+      <div class="analysis-value">${totalCardioTime}<span style="font-size:.65rem;color:var(--text2)"> min</span></div>
     </div>
     <div class="analysis-card">
       <div class="analysis-label">Overall Steps</div>
@@ -1002,14 +1083,15 @@ function updateAnalysis(ctx) {
     </div>
   </div>`;
 
-  // Workout completion (weekdays only)
+  // ── Workout completion (Mon–Fri only) ──
   if (isDay) {
     const pct = calcWorkoutCompletion();
-    html += `<div class="analysis-card">
-      <div class="analysis-label">Workout Completion</div>
-      <div class="analysis-value">${pct}%</div>
-      <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:${pct}%"></div></div>
-    </div>`;
+    html += `
+  <div class="analysis-card">
+    <div class="analysis-label">Workout Completion</div>
+    <div class="analysis-value">${pct}%</div>
+    <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:${pct}%"></div></div>
+  </div>`;
   }
 
   $(`${ctx}-analysis`).innerHTML = html;
@@ -1027,6 +1109,7 @@ function saveDayData(showMsg=true) {
   const payload = {
     weightExercises:     collectExercises('wt', 7),
     bodyweightExercises: collectExercises('bw', 6),
+    warmup: collectWarmup('day-warmup'),
     cardio: collectCardio('day-cardio'),
     food:   collectFood('day-food')
   };
@@ -1038,8 +1121,9 @@ function saveDayData(showMsg=true) {
 
 // ─── SAVE SAT / SUN ───────────────────────────────────────────────────────────
 function saveSatSun(dayKey, showMsg=true) {
-  const ctx     = dayKey === 'saturday' ? 'sat' : 'sun';
+  const ctx = dayKey === 'saturday' ? 'sat' : 'sun';
   const payload = {
+    warmup: collectWarmup(`${ctx}-warmup`),
     cardio: collectCardio(`${ctx}-cardio`),
     food:   collectFood(`${ctx}-food`)
   };
@@ -1049,33 +1133,30 @@ function saveSatSun(dayKey, showMsg=true) {
   refreshWeekTile(currentWeek);
 }
 
-// ─── LOAD DAY SCREEN ──────────────────────────────────────────────────────────
+// ─── LOAD DAY SCREEN (Mon–Fri) ────────────────────────────────────────────────
 function loadDayScreen(weekNum, dayKey) {
   currentWeek = weekNum;
   currentDay  = dayKey;
-
   const info  = DAY_DEFAULTS[dayKey];
   const saved = lsGet(`elan_week_${weekNum}_${dayKey}`) || {};
   console.log(`[Élan] Loading elan_week_${weekNum}_${dayKey}:`, saved);
 
   const dates   = getWeekDates(weekNum);
   const dayDate = dates.days[WEEKDAYS.indexOf(dayKey)];
-
   $('day-title').textContent       = DAY_LABELS[dayKey];
   $('day-focus-label').textContent = `${fmtFull(dayDate)} · ${info.focus}`;
   $('day-focus-label').style.color = 'var(--blue)';
 
-  // Exercises
+  // Build exercise sections
   const wtEl = $('weight-exercises');
   const bwEl = $('bw-exercises');
-  wtEl.innerHTML = '';
-  bwEl.innerHTML = '';
+  wtEl.innerHTML = bwEl.innerHTML = '';
   info.weight.forEach((ex, i) => { wtEl.innerHTML += buildExBlock(i, ex, true,  saved.weightExercises,     'wt'); });
   info.bw.forEach((ex, i)     => { bwEl.innerHTML += buildExBlock(i, ex, false, saved.bodyweightExercises, 'bw'); });
-
   attachSetListeners();
 
-  // Cardio + Food
+  // Build warm-up, cardio, food
+  buildWarmup('day-warmup', saved.warmup || null);
   buildCardio('day-cardio', saved.cardio || null);
   buildFood('day-food',     saved.food   || null);
 
@@ -1091,6 +1172,7 @@ function loadSatSunScreen(weekNum, dayKey) {
   const saved  = lsGet(`elan_week_${weekNum}_${dayKey}`) || {};
   console.log(`[Élan] Loading elan_week_${weekNum}_${dayKey}:`, saved);
   const ctx    = dayKey === 'saturday' ? 'sat' : 'sun';
+  buildWarmup(`${ctx}-warmup`, saved.warmup || null);
   buildCardio(`${ctx}-cardio`, saved.cardio || null);
   buildFood(`${ctx}-food`,     saved.food   || null);
   updateAnalysis(ctx);
@@ -1111,14 +1193,13 @@ function onSetsChange(e) {
   const pfx = sel.dataset.pfx;
   const num = parseInt(sel.value);
   const hw  = pfx === 'wt';
-  const cId = `${pfx}-sets-${idx}`;
-  const con = $(cId);
+  const con = $(`${pfx}-sets-${idx}`);
   if (!con) return;
   const existing = [];
-  for (let s=0; s<6; s++) {
+  for (let s = 0; s < 6; s++) {
     const rEl = con.querySelector(`input[data-si="${s}"][data-field="reps"]`);
     const wEl = con.querySelector(`input[data-si="${s}"][data-field="weight"]`);
-    existing.push({ reps: rEl?.value||'', weight: wEl?.value||'' });
+    existing.push({ reps: rEl?.value || '', weight: wEl?.value || '' });
   }
   con.innerHTML = buildSetRows(num, hw, existing);
   con.querySelectorAll('input').forEach(inp => {
@@ -1134,11 +1215,11 @@ function attachExInputListeners() {
   });
 }
 
-// ─── HOME SCREEN ─────────────────────────────────────────────────────────────
+// ─── HOME SCREEN ──────────────────────────────────────────────────────────────
 function buildHomeScreen() {
   const grid = $('weeks-grid');
   grid.innerHTML = '';
-  for (let w=1; w<=52; w++) {
+  for (let w = 1; w <= 52; w++) {
     const dates = getWeekDates(w);
     grid.innerHTML += buildWeekTileHTML(w, fmtRange(dates.start, dates.end), getWeekProgress(w));
   }
@@ -1150,19 +1231,19 @@ function buildHomeScreen() {
 function buildWeekTileHTML(w, dateStr, progress) {
   const dots = WEEKDAYS.map(d => {
     const f  = progress[d];
-    const dc = d==='saturday'?'sat': d==='sunday'?'sun':'';
-    return `<div class="dot ${dc} ${f?'filled':''}"></div>`;
+    const dc = d==='saturday' ? 'sat' : d==='sunday' ? 'sun' : '';
+    return `<div class="dot ${dc} ${f ? 'filled' : ''}"></div>`;
   }).join('');
   const filled = Object.values(progress).filter(Boolean).length;
-  const pct    = Math.round((filled/7)*100);
+  const pct    = Math.round((filled / 7) * 100);
   return `<div class="week-tile" data-week="${w}" id="week-tile-${w}">
-    <div class="week-tile-left">
+    <div>
       <div class="week-tile-label">Week ${w}</div>
       <div class="week-tile-dates">${dateStr}</div>
     </div>
     <div class="week-tile-right">
       <div class="week-progress-dots">${dots}</div>
-      <div class="week-tile-pct">${pct>0?pct+'% done':''}</div>
+      <div class="week-tile-pct">${pct > 0 ? pct + '% done' : ''}</div>
     </div>
   </div>`;
 }
@@ -1173,13 +1254,13 @@ function refreshWeekTile(w) {
   const progress = getWeekProgress(w);
   const dots = WEEKDAYS.map(d => {
     const f  = progress[d];
-    const dc = d==='saturday'?'sat': d==='sunday'?'sun':'';
-    return `<div class="dot ${dc} ${f?'filled':''}"></div>`;
+    const dc = d==='saturday' ? 'sat' : d==='sunday' ? 'sun' : '';
+    return `<div class="dot ${dc} ${f ? 'filled' : ''}"></div>`;
   }).join('');
   const filled = Object.values(progress).filter(Boolean).length;
-  const pct    = Math.round((filled/7)*100);
+  const pct    = Math.round((filled / 7) * 100);
   tile.querySelector('.week-progress-dots').innerHTML = dots;
-  tile.querySelector('.week-tile-pct').textContent    = pct>0?pct+'% done':'';
+  tile.querySelector('.week-tile-pct').textContent    = pct > 0 ? pct + '% done' : '';
 }
 
 function getWeekProgress(w) {
@@ -1193,15 +1274,17 @@ function loadWeekScreen(weekNum) {
   currentWeek = weekNum;
   const dates = getWeekDates(weekNum);
   $('week-title').textContent = `Week ${weekNum} · ${fmtRange(dates.start, dates.end)}`;
+
   const dayConf = [
-    {key:'monday',    label:'Monday',    cls:'blue',  sub:''},
-    {key:'tuesday',   label:'Tuesday',   cls:'blue',  sub:''},
-    {key:'wednesday', label:'Wednesday', cls:'blue',  sub:''},
-    {key:'thursday',  label:'Thursday',  cls:'blue',  sub:''},
-    {key:'friday',    label:'Friday',    cls:'blue',  sub:''},
-    {key:'saturday',  label:'Saturday',  cls:'amber', sub:'Rest · Cheat Day'},
-    {key:'sunday',    label:'Sunday',    cls:'teal',  sub:'Fasting Day'},
+    { key:'monday',    label:'Monday',    cls:'blue',  sub:'' },
+    { key:'tuesday',   label:'Tuesday',   cls:'blue',  sub:'' },
+    { key:'wednesday', label:'Wednesday', cls:'blue',  sub:'' },
+    { key:'thursday',  label:'Thursday',  cls:'blue',  sub:'' },
+    { key:'friday',    label:'Friday',    cls:'blue',  sub:'' },
+    { key:'saturday',  label:'Saturday',  cls:'amber', sub:'Rest · Cheat Day' },
+    { key:'sunday',    label:'Sunday',    cls:'teal',  sub:'Fasting Day' },
   ];
+
   const grid = $('days-grid');
   grid.innerHTML = '';
   dayConf.forEach((d, i) => {
@@ -1213,17 +1296,19 @@ function loadWeekScreen(weekNum) {
         <div class="day-date">${fmt(dayDate)}</div>
         ${d.sub ? `<div class="day-sub">${d.sub}</div>` : ''}
       </div>
-      <div class="day-check">${saved?'✅':''}</div>
+      <div class="day-check">${saved ? '✅' : ''}</div>
     </div>`;
   });
+
   grid.querySelectorAll('.day-tile').forEach(tile => {
     tile.addEventListener('click', () => {
       const day = tile.dataset.day;
-      if      (day==='saturday') loadSatSunScreen(weekNum,'saturday');
-      else if (day==='sunday')   loadSatSunScreen(weekNum,'sunday');
-      else                       loadDayScreen(weekNum, day);
+      if      (day === 'saturday') loadSatSunScreen(weekNum, 'saturday');
+      else if (day === 'sunday')   loadSatSunScreen(weekNum, 'sunday');
+      else                         loadDayScreen(weekNum, day);
     });
   });
+
   $('go-bodystats').onclick = () => loadBodyStats(weekNum);
   showScreen('screen-week');
 }
@@ -1241,11 +1326,10 @@ function loadBodyStats(weekNum) {
   const s = lsGet(`elan_week_${weekNum}_bodystats`) || {};
   BS_FIELDS.forEach(f => {
     const el = $(`bs-${f}`);
-    if (el) el.value = s[f] !== undefined ? s[f] : '';
+    if (el) el.value = safeVal(s[f]);
   });
   const ol = $('bs-obesityLevel');
   if (ol) ol.value = s.obesityLevel || '';
-  // Show BMI suggestion
   updateBmiSuggest();
   showScreen('screen-bodystats');
 }
@@ -1263,13 +1347,12 @@ function saveBodyStats() {
 }
 
 function updateBmiSuggest() {
-  const bmi      = n($('bs-bmi')?.value);
-  const suggest  = bmiToObesity(bmi);
-  const el       = $('bmi-suggest');
+  const bmi     = n($('bs-bmi')?.value);
+  const suggest = bmiToObesity(bmi);
+  const el      = $('bmi-suggest');
   if (!el) return;
   if (suggest) {
     el.textContent = `Suggested: ${suggest}`;
-    // Auto-set dropdown only if currently empty
     const ol = $('bs-obesityLevel');
     if (ol && !ol.value) ol.value = suggest;
   } else {
@@ -1301,14 +1384,14 @@ function saveStartDate() {
 // ─── EXPORT / IMPORT ──────────────────────────────────────────────────────────
 function exportData() {
   const out = {};
-  for (let i=0; i<localStorage.length; i++) {
+  for (let i = 0; i < localStorage.length; i++) {
     const k = localStorage.key(i);
     if (k.startsWith('elan_')) {
       try { out[k] = JSON.parse(localStorage.getItem(k)); }
       catch(e) { out[k] = localStorage.getItem(k); }
     }
   }
-  const blob = new Blob([JSON.stringify(out,null,2)],{type:'application/json'});
+  const blob = new Blob([JSON.stringify(out, null, 2)], { type: 'application/json' });
   const url  = URL.createObjectURL(blob);
   const a    = document.createElement('a');
   a.href     = url;
@@ -1323,8 +1406,8 @@ function importData(file) {
   reader.onload = e => {
     try {
       const data = JSON.parse(e.target.result);
-      Object.entries(data).forEach(([k,v]) => {
-        localStorage.setItem(k, typeof v==='string' ? v : JSON.stringify(v));
+      Object.entries(data).forEach(([k, v]) => {
+        localStorage.setItem(k, typeof v === 'string' ? v : JSON.stringify(v));
       });
       closeSettings();
       buildHomeScreen();
@@ -1339,11 +1422,11 @@ function importData(file) {
 // ─── EVENT LISTENERS ──────────────────────────────────────────────────────────
 $('settings-btn').addEventListener('click', openSettings);
 $('modal-close-btn').addEventListener('click', closeSettings);
-$('settings-modal').addEventListener('click', e => { if(e.target===$('settings-modal')) closeSettings(); });
+$('settings-modal').addEventListener('click', e => { if (e.target === $('settings-modal')) closeSettings(); });
 $('save-start-date').addEventListener('click', saveStartDate);
 $('export-btn').addEventListener('click', exportData);
 $('import-btn-trigger').addEventListener('click', () => $('import-file-input').click());
-$('import-file-input').addEventListener('change', e => { if(e.target.files[0]) importData(e.target.files[0]); });
+$('import-file-input').addEventListener('change', e => { if (e.target.files[0]) importData(e.target.files[0]); });
 
 $('week-back').addEventListener('click',      () => showScreen('screen-home'));
 $('bodystats-back').addEventListener('click', () => showScreen('screen-week'));
