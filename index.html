@@ -41,13 +41,12 @@
     ::-webkit-scrollbar-track { background: var(--bg); }
     ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
 
-    /* TOP BAR */
     .top-bar {
       display: flex; align-items: center; justify-content: space-between;
       padding: 16px 20px 12px; position: sticky; top: 0;
       background: var(--bg); z-index: 100; border-bottom: 1px solid var(--border);
     }
-    .top-bar-title { font-size: 1.1rem; font-weight: 700; color: var(--text); }
+    .top-bar-title { font-size: 1.1rem; font-weight: 700; }
     .back-btn {
       background: var(--surface); border: 1px solid var(--border); color: var(--text);
       padding: 8px 14px; border-radius: var(--radius-sm); font-size: 0.9rem; font-weight: 600;
@@ -59,7 +58,6 @@
       width: 40px; height: 40px; border-radius: var(--radius-sm); font-size: 1.1rem;
       display: flex; align-items: center; justify-content: center; transition: background 0.15s;
     }
-    .icon-btn:hover { background: var(--surface2); }
 
     /* HOME */
     #screen-home { padding-bottom: 40px; }
@@ -98,10 +96,7 @@
       padding: 24px 20px 40px; width: 100%; max-width: 480px; animation: slideUp 0.25s ease;
     }
     @keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
-    .modal-title {
-      font-size: 1.2rem; font-weight: 700; margin-bottom: 20px;
-      display: flex; align-items: center; justify-content: space-between;
-    }
+    .modal-title { font-size: 1.2rem; font-weight: 700; margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between; }
     .modal-close {
       background: var(--surface2); border: none; color: var(--text2);
       width: 32px; height: 32px; border-radius: 50%; font-size: 1rem;
@@ -109,10 +104,7 @@
     }
     .settings-row { margin-bottom: 16px; }
     .settings-label { font-size: 0.85rem; color: var(--text2); margin-bottom: 6px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
-    .settings-input {
-      background: var(--surface2); border: 1px solid var(--border); color: var(--text);
-      padding: 12px 14px; border-radius: var(--radius-sm); font-size: 1rem; width: 100%;
-    }
+    .settings-input { background: var(--surface2); border: 1px solid var(--border); color: var(--text); padding: 12px 14px; border-radius: var(--radius-sm); font-size: 1rem; width: 100%; }
     .settings-input:focus { border-color: var(--blue); }
     .settings-btn-row { display: flex; gap: 10px; margin-top: 8px; }
     .settings-btn { flex: 1; padding: 13px; border-radius: var(--radius-sm); font-size: 0.9rem; font-weight: 600; transition: opacity 0.15s; }
@@ -122,17 +114,15 @@
     .btn-teal    { background: var(--teal);   color: #000; }
     .btn-purple  { background: var(--purple); color: #fff; }
 
-    /* WEEK DETAIL */
+    /* WEEK */
     #screen-week { padding-bottom: 40px; }
     .screen-content { padding: 16px; }
     .body-stats-tile {
       background: linear-gradient(135deg,#8B5CF620,#8B5CF610); border: 1px solid #8B5CF640;
       border-radius: var(--radius); padding: 20px; margin-bottom: 12px; cursor: pointer;
-      display: flex; align-items: center; justify-content: space-between;
-      transition: background 0.15s; -webkit-tap-highlight-color: transparent;
+      display: flex; align-items: center; justify-content: space-between; transition: background 0.15s;
     }
     .body-stats-tile:hover { background: linear-gradient(135deg,#8B5CF630,#8B5CF620); }
-    .body-stats-tile:active { transform: scale(0.98); }
     .tile-label { font-size: 1rem; font-weight: 700; }
     .tile-sublabel { font-size: 0.8rem; color: var(--text2); margin-top: 3px; }
     .tile-arrow { font-size: 1.2rem; color: var(--text2); }
@@ -178,18 +168,17 @@
       background: var(--surface2); border: 1px solid var(--border); color: var(--text);
       border-radius: var(--radius-sm); padding: 10px 12px; font-size: 0.9rem; min-width: 130px;
     }
-    .bs-select:focus { border-color: var(--purple); }
     .bmi-suggest { font-size: 0.72rem; color: var(--teal); margin-top: 3px; }
-    .stats-note { text-align: center; color: var(--text2); font-size: 0.78rem; padding: 16px; margin-top: 8px; }
+    .stats-note { text-align: center; color: var(--text2); font-size: 0.78rem; padding: 16px; }
 
-    /* SAVE BUTTON */
+    /* SAVE BTN */
     .save-btn-wrap {
       padding: 16px; background: var(--bg); border-top: 1px solid var(--border);
       position: sticky; bottom: 0; z-index: 50;
     }
     .save-btn {
       width: 100%; padding: 16px; background: var(--blue); color: #fff; border-radius: var(--radius);
-      font-size: 1rem; font-weight: 700; letter-spacing: 0.3px; transition: opacity 0.15s, transform 0.1s;
+      font-size: 1rem; font-weight: 700; transition: opacity 0.15s, transform 0.1s;
     }
     .save-btn:active { transform: scale(0.98); opacity: 0.9; }
     .save-btn.amber  { background: var(--amber);  color: #000; }
@@ -205,7 +194,7 @@
     }
     .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
-    /* DAY SCREENS */
+    /* DAY */
     #screen-day, #screen-sat, #screen-sun { padding-bottom: 100px; }
     .section-header {
       font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
@@ -242,11 +231,14 @@
     .set-input:focus { border-color: var(--blue); }
     .set-input-reps   { width: 70px; }
     .set-input-weight { width: 80px; }
+    .set-input-time   { width: 80px; border-color: var(--teal) !important; }
+    .set-input-time:focus { border-color: var(--teal) !important; }
+    .set-unit { font-size: 0.7rem; color: var(--teal); font-weight: 600; }
 
     /* WARM-UP */
     .warmup-block {
-      background: var(--surface); border: 1px solid var(--orange);
-      border-radius: var(--radius); margin: 0 16px 10px; padding: 14px 16px;
+      background: var(--surface); border: 1px solid var(--orange); border-radius: var(--radius);
+      margin: 0 16px 10px; padding: 14px 16px;
     }
     .warmup-row {
       display: flex; align-items: center; justify-content: space-between;
@@ -254,7 +246,7 @@
     }
     .warmup-row:last-child { border-bottom: none; padding-bottom: 0; }
     .warmup-row:first-child { padding-top: 0; }
-    .warmup-ex-name { font-size: 0.9rem; font-weight: 600; color: var(--text); }
+    .warmup-ex-name { font-size: 0.9rem; font-weight: 600; }
     .warmup-ex-unit { font-size: 0.72rem; color: var(--text2); margin-top: 2px; }
     .warmup-input {
       background: var(--surface2); border: 1px solid var(--border); color: var(--text);
@@ -312,10 +304,10 @@
     .analysis-grid { padding: 0 16px; display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
     .analysis-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; }
     .analysis-label { font-size: 0.72rem; color: var(--text2); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 5px; }
-    .analysis-value { font-size: 1.1rem; font-weight: 700; font-family: 'Roboto Mono', monospace; color: var(--text); }
+    .analysis-value { font-size: 1.1rem; font-weight: 700; font-family: 'Roboto Mono', monospace; }
     .analysis-sub   { font-size: 0.72rem; color: var(--text2); margin-top: 4px; font-style: italic; }
     .analysis-status { font-size: 0.8rem; font-weight: 600; margin-top: 5px; }
-    .analysis-warn  { font-size: 0.75rem; color: var(--amber); margin-top: 6px; display: flex; align-items: flex-start; gap: 5px; }
+    .analysis-warn  { font-size: 0.75rem; color: var(--amber); display: flex; align-items: flex-start; gap: 5px; }
     .status-good { color: var(--green); }
     .status-warn { color: var(--amber); }
     .status-bad  { color: var(--red);   }
@@ -327,12 +319,9 @@
     .analysis-row-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
     .analysis-row-trio { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
 
-    /* SUPPRESS SPIN BUTTONS */
     input[type=number]::-webkit-inner-spin-button,
     input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; }
     input[type=number] { -moz-appearance: textfield; }
-
-    /* CUSTOM SELECT ARROW */
     select {
       appearance: none; -webkit-appearance: none;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23A0A0A0' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
@@ -351,16 +340,16 @@
 
 <div class="toast" id="toast"></div>
 
-<!-- ═══════════ HOME ═══════════ -->
+<!-- HOME -->
 <div class="screen active" id="screen-home">
   <div class="home-header">
     <div class="app-title">Élan</div>
-    <button class="icon-btn" id="settings-btn" aria-label="Settings">⚙️</button>
+    <button class="icon-btn" id="settings-btn">⚙️</button>
   </div>
   <div class="weeks-grid" id="weeks-grid"></div>
 </div>
 
-<!-- ═══════════ WEEK DETAIL ═══════════ -->
+<!-- WEEK -->
 <div class="screen" id="screen-week">
   <div class="top-bar">
     <button class="back-btn" id="week-back">← Back</button>
@@ -379,7 +368,7 @@
   </div>
 </div>
 
-<!-- ═══════════ BODY STATS ═══════════ -->
+<!-- BODY STATS -->
 <div class="screen" id="screen-bodystats">
   <div class="top-bar">
     <button class="back-btn" id="bodystats-back">← Back</button>
@@ -463,7 +452,7 @@
   </div>
 </div>
 
-<!-- ═══════════ DAY (Mon–Fri) ═══════════ -->
+<!-- DAY Mon–Fri -->
 <div class="screen" id="screen-day">
   <div class="top-bar">
     <button class="back-btn" id="day-back">← Back</button>
@@ -488,7 +477,7 @@
   </div>
 </div>
 
-<!-- ═══════════ SATURDAY ═══════════ -->
+<!-- SATURDAY -->
 <div class="screen" id="screen-sat">
   <div class="top-bar">
     <button class="back-btn" id="sat-back">← Back</button>
@@ -496,20 +485,22 @@
     <div style="width:40px"></div>
   </div>
   <div style="padding:4px 16px 0;font-size:0.8rem;color:var(--amber);font-weight:600;">Rest · Cheat Day</div>
-  <div class="section-header">C · Warm-Up</div>
+  <div class="section-header">A · Bodyweight &amp; Core</div>
+  <div id="sat-bw-exercises"></div>
+  <div class="section-header">B · Warm-Up</div>
   <div id="sat-warmup"></div>
-  <div class="section-header">D · Cardio</div>
+  <div class="section-header">C · Cardio</div>
   <div id="sat-cardio"></div>
-  <div class="section-header">E · Food</div>
+  <div class="section-header">D · Food</div>
   <div id="sat-food"></div>
-  <div class="section-header">F · Analysis</div>
+  <div class="section-header">E · Analysis</div>
   <div class="analysis-grid" id="sat-analysis"></div>
   <div class="save-btn-wrap">
     <button class="save-btn amber" id="save-sat">Save Day</button>
   </div>
 </div>
 
-<!-- ═══════════ SUNDAY ═══════════ -->
+<!-- SUNDAY -->
 <div class="screen" id="screen-sun">
   <div class="top-bar">
     <button class="back-btn" id="sun-back">← Back</button>
@@ -517,20 +508,22 @@
     <div style="width:40px"></div>
   </div>
   <div style="padding:4px 16px 0;font-size:0.8rem;color:var(--teal);font-weight:600;">Fasting Day</div>
-  <div class="section-header">C · Warm-Up</div>
+  <div class="section-header">A · Bodyweight &amp; Core</div>
+  <div id="sun-bw-exercises"></div>
+  <div class="section-header">B · Warm-Up</div>
   <div id="sun-warmup"></div>
-  <div class="section-header">D · Cardio</div>
+  <div class="section-header">C · Cardio</div>
   <div id="sun-cardio"></div>
-  <div class="section-header">E · Food</div>
+  <div class="section-header">D · Food</div>
   <div id="sun-food"></div>
-  <div class="section-header">F · Analysis</div>
+  <div class="section-header">E · Analysis</div>
   <div class="analysis-grid" id="sun-analysis"></div>
   <div class="save-btn-wrap">
     <button class="save-btn teal" id="save-sun">Save Day</button>
   </div>
 </div>
 
-<!-- ═══════════ SETTINGS MODAL ═══════════ -->
+<!-- SETTINGS MODAL -->
 <div class="modal-overlay" id="settings-modal">
   <div class="modal-sheet">
     <div class="modal-title">
@@ -554,13 +547,14 @@
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════
-     APP LOGIC
-═══════════════════════════════════════ -->
 <script>
 'use strict';
 
 // ─── CONSTANTS ────────────────────────────────────────────────────────────────
+
+// Plank-type exercises that use timeSeconds instead of reps
+const PLANK_EXERCISES = ['Plank', 'Side Plank Right', 'Side Plank Left'];
+
 const ALL_EXERCISES = [
   "Vertical Chest Press Machine","Bench Press Smith Machine","Incline Dumbbell Press",
   "Flat Dumbbell Press","Pec Fly","Cable Tricep Pushdown","Overhead Dumbbell Tricep",
@@ -571,118 +565,174 @@ const ALL_EXERCISES = [
   "Leg Curls","Hip Thrusts","Seated Calf Raise","Standing Calf Raise","Barbell Squats",
   "Power Squat","Leg Extension","Hip Back Extension","Overhead Machine Press",
   "Dumbbell Shoulder Press","Lateral Raise Machine","Dumbbell Lateral Raise",
-  "Rear Delt Fly","Barbell Shrugs","Face Pull","Wrist Curls","Decline Sit-ups",
+  "Rear Delt Fly","Dumbbell Shrugs","Face Pull","Wrist Curls","Decline Sit-ups",
   "Leg Raises","Plank","Russian Twist","Side Plank Right","Side Plank Left",
   "Superman Hold","Glute Bridge","Walking Lunges","Pike Push-ups"
 ];
 
+// BW defaults — same list for all days including Sat/Sun
+const BW_DEFAULT = ["Decline Sit-ups","Leg Raises","Plank","Russian Twist","Side Plank Right","Side Plank Left"];
+
 const DAY_DEFAULTS = {
-  monday:    { focus:"Chest & Triceps",   weight:["Vertical Chest Press Machine","Bench Press Smith Machine","Incline Dumbbell Press","Pec Fly","","Cable Tricep Pushdown","Overhead Dumbbell Tricep"], bw:["Decline Sit-ups","Leg Raises","Plank","Russian Twist","Side Plank Right","Side Plank Left"] },
-  tuesday:   { focus:"Legs & Glutes",     weight:["Lunges with Dumbbell","Leg Press Machine","Romanian Deadlifts","Leg Curls","Hip Thrusts","Seated Calf Raise","Barbell Squats"], bw:["Decline Sit-ups","Leg Raises","Plank","Russian Twist","Side Plank Right","Side Plank Left"] },
-  wednesday: { focus:"Back & Biceps",     weight:["Lateral Pull Down","Seated Cable Row","Vertical Row Machine","Dumbbell Bent Over Row","Back Extension","Biceps Hammer Curls","Biceps Curls Machine"], bw:["Assisted Pull-ups","Assisted Chin-ups","Plank","Russian Twist","Side Plank Right","Side Plank Left"] },
-  thursday:  { focus:"Shoulders & Traps", weight:["Overhead Machine Press","Dumbbell Shoulder Press","Lateral Raise Machine","Dumbbell Lateral Raise","Rear Delt Fly","Barbell Shrugs","Face Pull"], bw:["Decline Sit-ups","Leg Raises","Plank","Russian Twist","Side Plank Right","Side Plank Left"] },
-  friday:    { focus:"Full Body",         weight:["Lateral Pull Down","Seated Cable Row","Vertical Chest Press Machine","Pec Fly","Overhead Machine Press","Leg Extension","Wrist Curls"], bw:["Decline Sit-ups","Leg Raises","Plank","Russian Twist","Side Plank Right","Side Plank Left"] }
+  monday:    { focus:"Chest & Triceps",   weight:["Vertical Chest Press Machine","Bench Press Smith Machine","Incline Dumbbell Press","Pec Fly","","Cable Tricep Pushdown","Overhead Dumbbell Tricep"] },
+  tuesday:   { focus:"Legs & Glutes",     weight:["Lunges with Dumbbell","Leg Press Machine","Romanian Deadlifts","Leg Curls","Hip Thrusts","Seated Calf Raise","Barbell Squats"] },
+  wednesday: { focus:"Back & Biceps",     weight:["Lateral Pull Down","Seated Cable Row","Vertical Row Machine","Dumbbell Bent Over Row","Back Extension","Biceps Hammer Curls","Biceps Curls Machine"] },
+  thursday:  { focus:"Shoulders & Traps", weight:["Overhead Machine Press","Dumbbell Shoulder Press","Lateral Raise Machine","Dumbbell Lateral Raise","Rear Delt Fly","Dumbbell Shrugs","Face Pull"] },
+  friday:    { focus:"Full Body",         weight:["Lateral Pull Down","Seated Cable Row","Vertical Chest Press Machine","Pec Fly","Overhead Machine Press","Leg Extension","Wrist Curls"] }
+};
+
+// Wednesday uses different BW
+const BW_DEFAULTS_PER_DAY = {
+  wednesday: ["Assisted Pull-ups","Assisted Chin-ups","Plank","Russian Twist","Side Plank Right","Side Plank Left"]
 };
 
 const WEEKDAYS   = ["monday","tuesday","wednesday","thursday","friday","saturday","sunday"];
 const DAY_LABELS = { monday:"Monday",tuesday:"Tuesday",wednesday:"Wednesday",thursday:"Thursday",friday:"Friday",saturday:"Saturday",sunday:"Sunday" };
 
-// Warm-up exercise definitions
 const WARMUP_EXERCISES = [
-  { key: 'squats',      label: 'Bodyweight Squats', base: 0.32 },
-  { key: 'pushups',     label: 'Push-Ups',          base: 0.29 },
-  { key: 'jumpingJacks',label: 'Jumping Jacks',     base: 0.20 }
+  { key:'squats',       label:'Bodyweight Squats', base:0.32 },
+  { key:'pushups',      label:'Push-Ups',           base:0.29 },
+  { key:'jumpingJacks', label:'Jumping Jacks',       base:0.20 }
 ];
 
 // ─── STATE ────────────────────────────────────────────────────────────────────
 let currentWeek = 1;
-let currentDay  = "monday";
+let currentDay  = 'monday';
 
 // ─── UTILS ────────────────────────────────────────────────────────────────────
 const $  = id  => document.getElementById(id);
 const QA = sel => document.querySelectorAll(sel);
-
-// Safe number — returns 0 for empty / NaN / null / undefined
-const n = v => { const p = parseFloat(v); return isNaN(p) ? 0 : p; };
-
-// Safe value for inputs — returns '' when value is 0, null, or undefined
-// so fields never show a white "0" by default
+const n  = v   => { const p = parseFloat(v); return isNaN(p) ? 0 : p; };
 const safeVal = v => (v !== null && v !== undefined && v !== 0 && v !== '') ? v : '';
 
-function lsGet(key)      { try { return JSON.parse(localStorage.getItem(key)); } catch(e){ return null; } }
-function lsSet(key, val) { localStorage.setItem(key, JSON.stringify(val)); }
+function lsGet(k)      { try { return JSON.parse(localStorage.getItem(k)); } catch(e){ return null; } }
+function lsSet(k, val) { localStorage.setItem(k, JSON.stringify(val)); }
 
 function showToast(msg, ms=2200) {
-  const t = $('toast');
-  t.textContent = msg;
-  t.classList.add('show');
+  const t = $('toast'); t.textContent = msg; t.classList.add('show');
   setTimeout(() => t.classList.remove('show'), ms);
 }
-function showScreen(id) {
-  QA('.screen').forEach(s => s.classList.remove('active'));
-  $(id).classList.add('active');
-  window.scrollTo(0, 0);
-}
+
 function getStartDate() {
   const s = lsGet('elan_settings');
   return (s && s.startDate) ? new Date(s.startDate) : null;
 }
 function getWeekDates(w) {
-  const sd = getStartDate();
-  if (!sd) return { start:null, end:null, days:[] };
+  const sd = getStartDate(); if (!sd) return { start:null, end:null, days:[] };
   const days = [];
-  for (let i = 0; i < 7; i++) {
-    const d = new Date(sd);
-    d.setDate(d.getDate() + (w-1)*7 + i);
-    days.push(d);
-  }
+  for (let i=0;i<7;i++){ const d=new Date(sd); d.setDate(d.getDate()+(w-1)*7+i); days.push(d); }
   return { start:days[0], end:days[6], days };
 }
 function fmt(d)        { return d ? d.toLocaleDateString('en-GB',{day:'numeric',month:'short'}) : '—'; }
 function fmtFull(d)    { return d ? d.toLocaleDateString('en-GB',{weekday:'short',day:'numeric',month:'short',year:'numeric'}) : '—'; }
 function fmtRange(s,e) { return s ? `${fmt(s)} – ${fmt(e)}` : 'Set start date in ⚙️'; }
 
-// ─── BMI AUTO-SUGGEST ─────────────────────────────────────────────────────────
-function bmiToObesity(bmi) {
-  if (!bmi || bmi <= 0) return '';
-  if (bmi < 18.5) return 'Underweight';
-  if (bmi < 25)   return 'Normal';
-  if (bmi < 30)   return 'Overweight';
-  return 'Obese';
-}
-
-// ─── AGE FACTOR (shared by walking + warm-up) ─────────────────────────────────
 function getAgeFactor(age) {
   if (age < 30)  return 1.00;
   if (age <= 50) return 0.95;
   return 0.90;
 }
 
+function bmiToObesity(bmi) {
+  if (!bmi||bmi<=0) return '';
+  if (bmi<18.5) return 'Underweight';
+  if (bmi<25)   return 'Normal';
+  if (bmi<30)   return 'Overweight';
+  return 'Obese';
+}
+
+// ─── HISTORY / BACK NAVIGATION ────────────────────────────────────────────────
+// We use pushState to build a real history stack so Android back works.
+// State object: { screen, week, day }
+
+function showScreen(id, pushState=true) {
+  QA('.screen').forEach(s => s.classList.remove('active'));
+  $(id).classList.add('active');
+  window.scrollTo(0,0);
+  if (pushState) {
+    history.pushState({ screen: id, week: currentWeek, day: currentDay }, '', '');
+  }
+}
+
+window.addEventListener('popstate', e => {
+  const st = e.state;
+  if (!st) {
+    // Reached bottom of stack → show home without pushing again
+    QA('.screen').forEach(s => s.classList.remove('active'));
+    $('screen-home').classList.add('active');
+    window.scrollTo(0,0);
+    return;
+  }
+  switch (st.screen) {
+    case 'screen-home':
+      QA('.screen').forEach(s => s.classList.remove('active'));
+      $('screen-home').classList.add('active');
+      window.scrollTo(0,0);
+      break;
+    case 'screen-week':
+      currentWeek = st.week;
+      // Re-render week screen without pushing new state
+      _renderWeekScreen(st.week, false);
+      break;
+    case 'screen-day':
+      currentWeek = st.week; currentDay = st.day;
+      _renderDayScreen(st.week, st.day, false);
+      break;
+    case 'screen-sat':
+      currentWeek = st.week; currentDay = 'saturday';
+      _renderSatSunScreen(st.week, 'saturday', false);
+      break;
+    case 'screen-sun':
+      currentWeek = st.week; currentDay = 'sunday';
+      _renderSatSunScreen(st.week, 'sunday', false);
+      break;
+    case 'screen-bodystats':
+      currentWeek = st.week;
+      _renderBodyStats(st.week, false);
+      break;
+    default:
+      QA('.screen').forEach(s => s.classList.remove('active'));
+      $('screen-home').classList.add('active');
+  }
+});
+
 // ─── EXERCISE DROPDOWN ────────────────────────────────────────────────────────
 function exOptions(selected) {
   let html = '';
-  if (!selected || !selected.trim()) html += `<option value="">Choose Exercise</option>`;
+  if (!selected||!selected.trim()) html += `<option value="">Choose Exercise</option>`;
   ALL_EXERCISES.forEach(ex => {
     html += `<option value="${ex}"${ex===selected?' selected':''}>${ex}</option>`;
   });
-  if (selected && selected.trim() && !ALL_EXERCISES.includes(selected))
+  if (selected&&selected.trim()&&!ALL_EXERCISES.includes(selected))
     html = `<option value="${selected}" selected>${selected}</option>` + html;
   html += `<option value="">— Clear —</option>`;
   return html;
 }
 
+// ─── IS PLANK-TYPE? ───────────────────────────────────────────────────────────
+function isPlankType(exName) {
+  return PLANK_EXERCISES.includes(exName);
+}
+
 // ─── BUILD SET ROWS ───────────────────────────────────────────────────────────
-function buildSetRows(num, hasWeight, savedSets) {
+// isTime=true → show timeSeconds input; hasWeight=true → show weight input
+function buildSetRows(num, hasWeight, isTime, savedSets) {
   let html = '';
-  for (let i = 0; i < num; i++) {
-    const s  = (savedSets && savedSets[i]) || {};
-    const rv = safeVal(s.reps);
-    const wv = safeVal(s.weight);
+  for (let i=0; i<num; i++) {
+    const s   = (savedSets && savedSets[i]) || {};
+    const rv  = safeVal(s.reps);
+    const wv  = safeVal(s.weight);
+    const tv  = safeVal(s.timeSeconds);
     html += `<div class="set-row">
       <span class="set-label">Set ${i+1}</span>
-      <input type="number" class="set-input set-input-reps" placeholder="0" min="0"
-        data-si="${i}" data-field="reps" value="${rv}" />
-      ${hasWeight
+      ${isTime
+        ? `<input type="number" class="set-input set-input-time" placeholder="0" min="0"
+             data-si="${i}" data-field="timeSeconds" value="${tv}" />
+           <span class="set-unit">sec</span>`
+        : `<input type="number" class="set-input set-input-reps" placeholder="0" min="0"
+             data-si="${i}" data-field="reps" value="${rv}" />`
+      }
+      ${hasWeight && !isTime
         ? `<input type="number" class="set-input set-input-weight" placeholder="0" min="0" step="0.5"
              data-si="${i}" data-field="weight" value="${wv}" />`
         : ''}
@@ -692,21 +742,24 @@ function buildSetRows(num, hasWeight, savedSets) {
 }
 
 // ─── BUILD EXERCISE BLOCK ─────────────────────────────────────────────────────
-function buildExBlock(idx, defaultEx, hasWeight, savedArr, pfx) {
+function buildExBlock(idx, defaultEx, hasWeight, savedArr, pfx, forceIsTime) {
   const saved   = savedArr && savedArr[idx] ? savedArr[idx] : null;
   const exName  = saved ? (saved.name || defaultEx || '') : (defaultEx || '');
   const numSets = saved && saved.sets && saved.sets.length ? saved.sets.length : 3;
   const maxSets = hasWeight ? 6 : 4;
+  const isTime  = forceIsTime !== undefined ? forceIsTime : isPlankType(exName);
+
   let sOpts = '';
-  for (let i=1; i<=maxSets; i++) sOpts += `<option value="${i}"${i===numSets?' selected':''}>${i}</option>`;
-  return `<div class="exercise-block" data-idx="${idx}" data-pfx="${pfx}">
+  for (let i=1;i<=maxSets;i++) sOpts += `<option value="${i}"${i===numSets?' selected':''}>${i}</option>`;
+
+  return `<div class="exercise-block" data-idx="${idx}" data-pfx="${pfx}" data-is-time="${isTime}">
     <div class="exercise-header">
       <select class="ex-select" data-idx="${idx}" data-pfx="${pfx}">${exOptions(exName)}</select>
       <span class="sets-label">Sets:</span>
       <select class="sets-select" data-idx="${idx}" data-pfx="${pfx}">${sOpts}</select>
     </div>
     <div class="sets-container" id="${pfx}-sets-${idx}">
-      ${buildSetRows(numSets, hasWeight, saved ? saved.sets : null)}
+      ${buildSetRows(numSets, hasWeight, isTime, saved ? saved.sets : null)}
     </div>
   </div>`;
 }
@@ -714,8 +767,7 @@ function buildExBlock(idx, defaultEx, hasWeight, savedArr, pfx) {
 // ─── BUILD WARM-UP ────────────────────────────────────────────────────────────
 function buildWarmup(containerId, savedWarmup) {
   const w   = savedWarmup || {};
-  const ctx = containerId.split('-')[0]; // 'day' | 'sat' | 'sun'
-
+  const ctx = containerId.split('-')[0];
   $(containerId).innerHTML = `
     <div class="warmup-block">
       ${WARMUP_EXERCISES.map(ex => `
@@ -725,82 +777,48 @@ function buildWarmup(containerId, savedWarmup) {
             <div class="warmup-ex-unit">Total reps</div>
           </div>
           <input type="number" class="warmup-input"
-            id="${containerId}-${ex.key}"
-            placeholder="0" min="0"
+            id="${containerId}-${ex.key}" placeholder="0" min="0"
             value="${safeVal(w[ex.key])}" />
         </div>`).join('')}
     </div>`;
-
   $(containerId).querySelectorAll('input').forEach(inp => {
     inp.addEventListener('input', () => updateAnalysis(ctx));
     inp.addEventListener('blur',  () => triggerAutoSave(ctx));
   });
 }
 
-// ─── COLLECT WARM-UP ─────────────────────────────────────────────────────────
-function collectWarmup(containerId) {
-  const out = {};
-  WARMUP_EXERCISES.forEach(ex => {
-    out[ex.key] = n($(`${containerId}-${ex.key}`)?.value);
-  });
-  return out;
-}
-
-// ─── CALC WARM-UP CALORIES ───────────────────────────────────────────────────
-function calcWarmupCalories(warmup, bodyWeight, age) {
-  if (!bodyWeight || !age) return 0;
-  const af = getAgeFactor(age);
-  const wf = bodyWeight / 70;
-  let cal = 0;
-  WARMUP_EXERCISES.forEach(ex => {
-    cal += n(warmup[ex.key]) * ex.base * af * wf;
-  });
-  return Math.round(cal);
-}
-
 // ─── BUILD CARDIO ─────────────────────────────────────────────────────────────
 function buildCardio(containerId, savedCardio) {
-  const c  = savedCardio || {};
-  const tm = c.treadmill  || {};
-  const el = c.elliptical || {};
-  const bk = c.bike       || {};
-  const os = safeVal(c.overallSteps);
-
+  const c = savedCardio||{}; const tm=c.treadmill||{}; const el=c.elliptical||{}; const bk=c.bike||{};
+  const ctx = containerId.split('-')[0];
   $(containerId).innerHTML = `
     <div class="cardio-block">
       <div class="cardio-machine-name">🏃 Treadmill</div>
       <div class="cardio-fields">
         <div class="cardio-field"><label>Steps</label>
-          <input type="number" class="cardio-input cardio-input-wide"
-            id="${containerId}-tm-steps" placeholder="0" min="0" value="${safeVal(tm.steps)}" /></div>
+          <input type="number" class="cardio-input cardio-input-wide" id="${containerId}-tm-steps" placeholder="0" min="0" value="${safeVal(tm.steps)}" /></div>
         <div class="cardio-field"><label>Calories Burned</label>
-          <input type="number" class="cardio-input"
-            id="${containerId}-tm-cal" placeholder="0" min="0" value="${safeVal(tm.calories)}" /></div>
+          <input type="number" class="cardio-input" id="${containerId}-tm-cal" placeholder="0" min="0" value="${safeVal(tm.calories)}" /></div>
         <div class="cardio-field"><label>Time (min)</label>
-          <input type="number" class="cardio-input"
-            id="${containerId}-tm-time" placeholder="0" min="0" value="${safeVal(tm.time)}" /></div>
+          <input type="number" class="cardio-input" id="${containerId}-tm-time" placeholder="0" min="0" value="${safeVal(tm.time)}" /></div>
       </div>
     </div>
     <div class="cardio-block">
       <div class="cardio-machine-name">🔄 Elliptical</div>
       <div class="cardio-fields">
         <div class="cardio-field"><label>Calories Burned</label>
-          <input type="number" class="cardio-input"
-            id="${containerId}-el-cal" placeholder="0" min="0" value="${safeVal(el.calories)}" /></div>
+          <input type="number" class="cardio-input" id="${containerId}-el-cal" placeholder="0" min="0" value="${safeVal(el.calories)}" /></div>
         <div class="cardio-field"><label>Time (min)</label>
-          <input type="number" class="cardio-input"
-            id="${containerId}-el-time" placeholder="0" min="0" value="${safeVal(el.time)}" /></div>
+          <input type="number" class="cardio-input" id="${containerId}-el-time" placeholder="0" min="0" value="${safeVal(el.time)}" /></div>
       </div>
     </div>
     <div class="cardio-block">
       <div class="cardio-machine-name">🚴 Upright / Spin Bike</div>
       <div class="cardio-fields">
         <div class="cardio-field"><label>Calories Burned</label>
-          <input type="number" class="cardio-input"
-            id="${containerId}-bk-cal" placeholder="0" min="0" value="${safeVal(bk.calories)}" /></div>
+          <input type="number" class="cardio-input" id="${containerId}-bk-cal" placeholder="0" min="0" value="${safeVal(bk.calories)}" /></div>
         <div class="cardio-field"><label>Time (min)</label>
-          <input type="number" class="cardio-input"
-            id="${containerId}-bk-time" placeholder="0" min="0" value="${safeVal(bk.time)}" /></div>
+          <input type="number" class="cardio-input" id="${containerId}-bk-time" placeholder="0" min="0" value="${safeVal(bk.time)}" /></div>
       </div>
     </div>
     <div class="overall-steps-block">
@@ -808,11 +826,8 @@ function buildCardio(containerId, savedCardio) {
         <div class="overall-steps-label">👣 Overall Steps</div>
         <div class="overall-steps-sub">Overall Steps (including treadmill + walking)</div>
       </div>
-      <input type="number" class="overall-steps-input"
-        id="${containerId}-overall-steps" placeholder="0" min="0" value="${os}" />
+      <input type="number" class="overall-steps-input" id="${containerId}-overall-steps" placeholder="0" min="0" value="${safeVal(c.overallSteps)}" />
     </div>`;
-
-  const ctx = containerId.split('-')[0];
   $(containerId).querySelectorAll('input').forEach(inp => {
     inp.addEventListener('input', () => updateAnalysis(ctx));
     inp.addEventListener('blur',  () => triggerAutoSave(ctx));
@@ -821,43 +836,38 @@ function buildCardio(containerId, savedCardio) {
 
 // ─── BUILD FOOD ───────────────────────────────────────────────────────────────
 function buildFood(containerId, savedFood) {
-  const f = savedFood || {};
+  const f = savedFood||{};
+  const ctx = containerId.split('-')[0];
   $(containerId).innerHTML = `
     <div class="food-block">
       <div class="food-row">
         <div><div class="food-label">Total Calories</div><div class="food-unit">kcal</div></div>
-        <input type="number" class="food-input"
-          id="${containerId}-kcal" placeholder="0" min="0" value="${safeVal(f.calories)}" />
+        <input type="number" class="food-input" id="${containerId}-kcal" placeholder="0" min="0" value="${safeVal(f.calories)}" />
       </div>
       <div class="food-row">
         <div><div class="food-label">Protein</div><div class="food-unit">g</div></div>
-        <input type="number" class="food-input"
-          id="${containerId}-protein" placeholder="0" min="0" value="${safeVal(f.protein)}" />
+        <input type="number" class="food-input" id="${containerId}-protein" placeholder="0" min="0" value="${safeVal(f.protein)}" />
       </div>
       <div class="food-row">
         <div><div class="food-label">Fiber</div><div class="food-unit">g</div></div>
-        <input type="number" class="food-input"
-          id="${containerId}-fiber" placeholder="0" min="0" value="${safeVal(f.fiber)}" />
+        <input type="number" class="food-input" id="${containerId}-fiber" placeholder="0" min="0" value="${safeVal(f.fiber)}" />
       </div>
     </div>`;
-  const ctx = containerId.split('-')[0];
   $(containerId).querySelectorAll('input').forEach(inp => {
     inp.addEventListener('input', () => updateAnalysis(ctx));
     inp.addEventListener('blur',  () => triggerAutoSave(ctx));
   });
 }
 
-// ─── COLLECT CARDIO ───────────────────────────────────────────────────────────
+// ─── COLLECT HELPERS ──────────────────────────────────────────────────────────
 function collectCardio(cId) {
   return {
-    treadmill:  { steps: n($(`${cId}-tm-steps`)?.value),  calories: n($(`${cId}-tm-cal`)?.value),  time: n($(`${cId}-tm-time`)?.value) },
-    elliptical: { calories: n($(`${cId}-el-cal`)?.value), time: n($(`${cId}-el-time`)?.value) },
-    bike:       { calories: n($(`${cId}-bk-cal`)?.value), time: n($(`${cId}-bk-time`)?.value) },
+    treadmill:  { steps:n($(`${cId}-tm-steps`)?.value),    calories:n($(`${cId}-tm-cal`)?.value),  time:n($(`${cId}-tm-time`)?.value) },
+    elliptical: { calories:n($(`${cId}-el-cal`)?.value),   time:n($(`${cId}-el-time`)?.value) },
+    bike:       { calories:n($(`${cId}-bk-cal`)?.value),   time:n($(`${cId}-bk-time`)?.value) },
     overallSteps: n($(`${cId}-overall-steps`)?.value)
   };
 }
-
-// ─── COLLECT FOOD ─────────────────────────────────────────────────────────────
 function collectFood(fId) {
   return {
     calories: n($(`${fId}-kcal`)?.value),
@@ -865,55 +875,98 @@ function collectFood(fId) {
     fiber:    n($(`${fId}-fiber`)?.value)
   };
 }
+function collectWarmup(wId) {
+  const out = {};
+  WARMUP_EXERCISES.forEach(ex => { out[ex.key] = n($(`${wId}-${ex.key}`)?.value); });
+  return out;
+}
 
-// ─── COLLECT EXERCISES ────────────────────────────────────────────────────────
 function collectExercises(pfx, count) {
   const out = [];
-  for (let i = 0; i < count; i++) {
+  for (let i=0; i<count; i++) {
     const block = document.querySelector(`.exercise-block[data-idx="${i}"][data-pfx="${pfx}"]`);
-    if (!block) { out.push({ name:'', sets:[] }); continue; }
-    const nm   = block.querySelector('.ex-select').value;
-    const ns   = parseInt(block.querySelector('.sets-select').value) || 1;
-    const sets = [];
-    for (let s = 0; s < ns; s++) {
-      const rEl = block.querySelector(`input[data-si="${s}"][data-field="reps"]`);
-      const wEl = block.querySelector(`input[data-si="${s}"][data-field="weight"]`);
-      sets.push({ reps: n(rEl?.value), weight: n(wEl?.value) });
+    if (!block) { out.push({name:'',sets:[]}); continue; }
+    const nm     = block.querySelector('.ex-select').value;
+    const ns     = parseInt(block.querySelector('.sets-select').value)||1;
+    const isTime = block.dataset.isTime === 'true';
+    const sets   = [];
+    for (let s=0; s<ns; s++) {
+      if (isTime) {
+        const tEl = block.querySelector(`input[data-si="${s}"][data-field="timeSeconds"]`);
+        sets.push({ timeSeconds: n(tEl?.value) });
+      } else {
+        const rEl = block.querySelector(`input[data-si="${s}"][data-field="reps"]`);
+        const wEl = block.querySelector(`input[data-si="${s}"][data-field="weight"]`);
+        sets.push({ reps: n(rEl?.value), weight: n(wEl?.value) });
+      }
     }
-    out.push({ name: nm, sets });
+    out.push({ name:nm, sets, isTime });
   }
   return out;
 }
 
-// ─── WALKING CALORIE CALC ────────────────────────────────────────────────────
+// ─── CALORIE CALCULATIONS ─────────────────────────────────────────────────────
 function calcWalkingCalories(overallSteps, treadmillSteps, bodyWeight, age) {
-  if (!bodyWeight || !age) return { walkingCal: 0, walkingSteps: 0, missingStats: true };
-  const walkingSteps = Math.max(0, overallSteps - treadmillSteps);
-  const walkingCal   = Math.round(walkingSteps * bodyWeight * 0.00057 * getAgeFactor(age));
-  return { walkingCal, walkingSteps, missingStats: false };
+  if (!bodyWeight||!age) return { walkingCal:0, walkingSteps:0 };
+  const ws  = Math.max(0, overallSteps - treadmillSteps);
+  const cal = Math.round(ws * bodyWeight * 0.00057 * getAgeFactor(age));
+  return { walkingCal:cal, walkingSteps:ws };
 }
 
-// ─── EXERCISE CALORIE ESTIMATION (Mon–Fri) ────────────────────────────────────
-function calcExerciseCalories() {
+function calcWarmupCalories(warmup, bodyWeight, age) {
+  if (!bodyWeight||!age) return 0;
+  const af = getAgeFactor(age); const wf = bodyWeight/70;
+  let cal = 0;
+  WARMUP_EXERCISES.forEach(ex => { cal += n(warmup[ex.key]) * ex.base * af * wf; });
+  return Math.round(cal);
+}
+
+function calcExerciseCalories(exArr, bodyWeight, age) {
+  // exArr: result of collectExercises (can be wt or bw)
+  let weightedVol  = 0;
+  let nonPlankReps = 0;
+  let plankSec     = 0;
+  let spRightSec   = 0;
+  let spLeftSec    = 0;
+
+  exArr.forEach(ex => {
+    if (ex.isTime) {
+      // Time-based plank exercises
+      const totalSec = ex.sets.reduce((a,s) => a + n(s.timeSeconds), 0);
+      if (ex.name === 'Plank')            plankSec   += totalSec;
+      if (ex.name === 'Side Plank Right') spRightSec += totalSec;
+      if (ex.name === 'Side Plank Left')  spLeftSec  += totalSec;
+    } else if (ex.sets && ex.sets[0] && ex.sets[0].weight !== undefined && ex.sets[0].weight > 0) {
+      // Weighted exercise
+      ex.sets.forEach(s => { weightedVol += n(s.reps) * n(s.weight); });
+    } else {
+      // Bodyweight reps (non-plank)
+      ex.sets.forEach(s => { nonPlankReps += n(s.reps); });
+    }
+  });
+
+  const weightedCal = Math.round(weightedVol * 0.03);
+  const bwRepsCal   = Math.round(nonPlankReps * 0.5);
+
+  let plankFamilyCal = 0;
+  if (bodyWeight && age) {
+    const af = getAgeFactor(age);
+    plankFamilyCal = Math.round(plankSec   * bodyWeight * 0.000204 * af)
+                   + Math.round(spRightSec * bodyWeight * 0.000233 * af)
+                   + Math.round(spLeftSec  * bodyWeight * 0.000233 * af);
+  }
+
+  return { weightedCal, bwRepsCal, plankFamilyCal, totalExCal: weightedCal + bwRepsCal + plankFamilyCal };
+}
+
+function calcWorkoutCompletion() {
+  // Only 13 exercises: 7 wt + 6 bw — weekend bw not counted
   const wt = collectExercises('wt', 7);
   const bw = collectExercises('bw', 6);
-  let totalWeightedVol = 0;
-  wt.forEach(ex => ex.sets.forEach(s => { totalWeightedVol += s.reps * s.weight; }));
-  let totalBwReps = 0;
-  bw.forEach(ex => ex.sets.forEach(s => { totalBwReps += s.reps; }));
-  return {
-    weightedCal:   Math.round(totalWeightedVol * 0.03),
-    bodyweightCal: Math.round(totalBwReps * 0.5),
-    totalExCal:    Math.round(totalWeightedVol * 0.03) + Math.round(totalBwReps * 0.5)
-  };
-}
-
-// ─── WORKOUT COMPLETION (Mon–Fri, 13 exercises only) ─────────────────────────
-function calcWorkoutCompletion() {
-  const wt   = collectExercises('wt', 7);
-  const bw   = collectExercises('bw', 6);
-  const done = [...wt, ...bw].filter(e => e.sets.some(s => s.reps > 0)).length;
-  return Math.round((done / 13) * 100);
+  const done = [...wt, ...bw].filter(ex =>
+    ex.sets.some(s => s.reps > 0 || s.timeSeconds > 0)
+  ).length;
+  return Math.round((done/13)*100);
 }
 
 // ─── UPDATE ANALYSIS ─────────────────────────────────────────────────────────
@@ -923,175 +976,120 @@ function updateAnalysis(ctx) {
   const wuId  = `${ctx}-warmup`;
   const isDay = ctx === 'day';
   const isSat = ctx === 'sat';
-  const barCls = isSat ? 'amber' : ctx === 'sun' ? 'teal' : '';
+  const barCls = isSat ? 'amber' : ctx==='sun' ? 'teal' : '';
 
-  // Body stats
   const bs         = lsGet(`elan_week_${currentWeek}_bodystats`) || {};
   const bodyWeight = n(bs.bodyWeight);
   const age        = n(bs.age);
   const bmr        = n(bs.bmr);
   const hasStats   = bodyWeight > 0 && age > 0;
 
-  // Inputs
   const cardio = collectCardio(cId);
   const food   = collectFood(fId);
   const warmup = collectWarmup(wuId);
 
-  // Cardio
   const tmCal  = cardio.treadmill.calories;
   const elCal  = cardio.elliptical.calories;
   const bkCal  = cardio.bike.calories;
-  const tmTime = cardio.treadmill.time;
-  const elTime = cardio.elliptical.time;
-  const bkTime = cardio.bike.time;
-  const overallSteps   = cardio.overallSteps;
-  const treadmillSteps = cardio.treadmill.steps;
-  const totalCardioTime = tmTime + elTime + bkTime;
+  const totalCardioTime = cardio.treadmill.time + cardio.elliptical.time + cardio.bike.time;
+  const overallSteps    = cardio.overallSteps;
 
-  // Walking
-  const { walkingCal, walkingSteps } = calcWalkingCalories(overallSteps, treadmillSteps, bodyWeight, age);
+  const { walkingCal, walkingSteps } = calcWalkingCalories(overallSteps, cardio.treadmill.steps, bodyWeight, age);
   const totalStepsCal  = tmCal + walkingCal;
   const totalCardioCal = totalStepsCal + elCal + bkCal;
+  const wuCal          = calcWarmupCalories(warmup, bodyWeight, age);
 
-  // Warm-up calories
-  const wuCal = calcWarmupCalories(warmup, bodyWeight, age);
-
-  // Exercise calories (weekdays only)
-  let exCal = 0;
-  let exDetails = null;
+  // Exercise calories — from day (wt+bw) or weekend (bw only)
+  let exDetails = { weightedCal:0, bwRepsCal:0, plankFamilyCal:0, totalExCal:0 };
   if (isDay) {
-    exDetails = calcExerciseCalories();
-    exCal     = exDetails.totalExCal;
+    const wtArr = collectExercises('wt', 7);
+    const bwArr = collectExercises('bw', 6);
+    exDetails   = calcExerciseCalories([...wtArr, ...bwArr], bodyWeight, age);
+  } else {
+    // Sat/Sun: bw exercises only
+    const pfx    = ctx === 'sat' ? 'sat-bw' : 'sun-bw';
+    const bwArr  = collectExercises(pfx, 6);
+    exDetails    = calcExerciseCalories(bwArr, bodyWeight, age);
   }
 
-  // Totals
-  const totalBurned = totalCardioCal + wuCal + exCal;
+  const totalBurned = totalCardioCal + wuCal + exDetails.totalExCal;
   const netBalance  = food.calories - (bmr + totalBurned);
 
-  // Status labels
   let calStatus, calClass;
-  if      (netBalance < 0)    { calStatus = 'Calorie Deficit ✓'; calClass = 'status-good'; }
-  else if (netBalance <= 200) { calStatus = 'Balanced';           calClass = 'status-warn'; }
-  else                        { calStatus = 'Calorie Surplus ↑';  calClass = 'status-bad';  }
+  if      (netBalance < 0)    { calStatus='Calorie Deficit ✓'; calClass='status-good'; }
+  else if (netBalance <= 200) { calStatus='Balanced';           calClass='status-warn'; }
+  else                        { calStatus='Calorie Surplus ↑';  calClass='status-bad';  }
 
-  const proteinPct    = Math.min(Math.round((food.protein / 100) * 100), 100);
-  const fiberPct      = Math.min(Math.round((food.fiber   / 25)  * 100), 100);
+  const proteinPct = Math.min(Math.round((food.protein/100)*100),100);
+  const fiberPct   = Math.min(Math.round((food.fiber/25)*100),100);
   const proteinStatus = food.protein >= 100
     ? '<span class="status-good">Protein Target Met ✓</span>'
     : '<span class="status-warn">Below Protein Target</span>';
 
-  // Warning card if stats missing
-  const statsWarn = (!hasStats || !bmr)
+  const statsWarn = (!hasStats||!bmr)
     ? `<div class="analysis-card analysis-warn">⚠️ <span>Enter Body Weight, Age and BMR in Body Stats for accurate calorie estimates.</span></div>`
     : '';
 
   let html = statsWarn;
 
-  // ── Cardio breakdown ──
   html += `
   <div class="analysis-row-trio">
-    <div class="analysis-card">
-      <div class="analysis-label">Treadmill Cal</div>
-      <div class="analysis-value">${tmCal}<span style="font-size:.65rem;color:var(--text2)"> kcal</span></div>
-    </div>
-    <div class="analysis-card">
-      <div class="analysis-label">Walking Cal</div>
-      <div class="analysis-value">${walkingCal}<span style="font-size:.65rem;color:var(--text2)"> kcal</span></div>
-    </div>
-    <div class="analysis-card">
-      <div class="analysis-label">Total Step Cal</div>
-      <div class="analysis-value">${totalStepsCal}<span style="font-size:.65rem;color:var(--text2)"> kcal</span></div>
-    </div>
+    <div class="analysis-card"><div class="analysis-label">Treadmill Cal</div>
+      <div class="analysis-value">${tmCal}<span style="font-size:.65rem;color:var(--text2)"> kcal</span></div></div>
+    <div class="analysis-card"><div class="analysis-label">Walking Cal</div>
+      <div class="analysis-value">${walkingCal}<span style="font-size:.65rem;color:var(--text2)"> kcal</span></div></div>
+    <div class="analysis-card"><div class="analysis-label">Total Step Cal</div>
+      <div class="analysis-value">${totalStepsCal}<span style="font-size:.65rem;color:var(--text2)"> kcal</span></div></div>
   </div>
   <div class="analysis-card">
-    <div class="analysis-sub" style="margin-top:0">
-      Walking steps: ${(walkingSteps||0).toLocaleString()} · Walking calories are estimated from non-treadmill steps using your body weight and age.
-    </div>
+    <div class="analysis-sub" style="margin-top:0">Walking steps: ${(walkingSteps||0).toLocaleString()} · Estimated from non-treadmill steps using body weight &amp; age.</div>
   </div>
   <div class="analysis-row-trio">
-    <div class="analysis-card">
-      <div class="analysis-label">Elliptical Cal</div>
-      <div class="analysis-value">${elCal}<span style="font-size:.65rem;color:var(--text2)"> kcal</span></div>
-    </div>
-    <div class="analysis-card">
-      <div class="analysis-label">Bike Cal</div>
-      <div class="analysis-value">${bkCal}<span style="font-size:.65rem;color:var(--text2)"> kcal</span></div>
-    </div>
-    <div class="analysis-card">
-      <div class="analysis-label">Total Cardio Cal</div>
-      <div class="analysis-value">${totalCardioCal}<span style="font-size:.65rem;color:var(--text2)"> kcal</span></div>
-    </div>
-  </div>`;
-
-  // ── Warm-up calories ──
-  html += `
-  <div class="analysis-card">
-    <div class="analysis-label">Warm-Up Calories Burned</div>
+    <div class="analysis-card"><div class="analysis-label">Elliptical Cal</div>
+      <div class="analysis-value">${elCal}<span style="font-size:.65rem;color:var(--text2)"> kcal</span></div></div>
+    <div class="analysis-card"><div class="analysis-label">Bike Cal</div>
+      <div class="analysis-value">${bkCal}<span style="font-size:.65rem;color:var(--text2)"> kcal</span></div></div>
+    <div class="analysis-card"><div class="analysis-label">Total Cardio Cal</div>
+      <div class="analysis-value">${totalCardioCal}<span style="font-size:.65rem;color:var(--text2)"> kcal</span></div></div>
+  </div>
+  <div class="analysis-card"><div class="analysis-label">Warm-Up Calories Burned</div>
     <div class="analysis-value">${wuCal}<span style="font-size:.65rem;color:var(--text2)"> kcal</span></div>
-    <div class="analysis-sub">Warm-up calories are estimated based on reps, body weight, and age.</div>
-  </div>`;
-
-  // ── Exercise calories (Mon–Fri only) ──
-  if (isDay && exDetails) {
-    html += `
-  <div class="analysis-card">
-    <div class="analysis-label">Est. Exercise Calories Burned</div>
+    <div class="analysis-sub">Estimated from reps, body weight &amp; age.</div>
+  </div>
+  <div class="analysis-card"><div class="analysis-label">Est. Exercise Calories Burned</div>
     <div class="analysis-value">${exDetails.totalExCal}<span style="font-size:.65rem;color:var(--text2)"> kcal</span></div>
-    <div class="analysis-sub">Exercise calories are estimated from workout volume and reps.</div>
-  </div>`;
-  }
-
-  // ── Total burned + net balance ──
-  html += `
+    <div class="analysis-sub">Weighted: ${exDetails.weightedCal} · BW reps: ${exDetails.bwRepsCal} · Plank/isometric: ${exDetails.plankFamilyCal} kcal</div>
+  </div>
   <div class="analysis-row-pair">
-    <div class="analysis-card">
-      <div class="analysis-label">Total Calories Burned</div>
-      <div class="analysis-value">${totalBurned}<span style="font-size:.65rem;color:var(--text2)"> kcal</span></div>
-    </div>
-    <div class="analysis-card">
-      <div class="analysis-label">Net Daily Energy Balance</div>
-      <div class="analysis-value">${netBalance > 0 ? '+' : ''}${netBalance}<span style="font-size:.65rem;color:var(--text2)"> kcal</span></div>
-      <div class="analysis-status ${calClass}">${calStatus}</div>
-    </div>
-  </div>`;
-
-  // ── Protein + Fiber ──
-  html += `
-  <div class="analysis-card">
-    <div class="analysis-label">Protein vs Target (100g)</div>
+    <div class="analysis-card"><div class="analysis-label">Total Calories Burned</div>
+      <div class="analysis-value">${totalBurned}<span style="font-size:.65rem;color:var(--text2)"> kcal</span></div></div>
+    <div class="analysis-card"><div class="analysis-label">Net Daily Energy Balance</div>
+      <div class="analysis-value">${netBalance>0?'+':''}${netBalance}<span style="font-size:.65rem;color:var(--text2)"> kcal</span></div>
+      <div class="analysis-status ${calClass}">${calStatus}</div></div>
+  </div>
+  <div class="analysis-card"><div class="analysis-label">Protein vs Target (100g)</div>
     <div class="analysis-value">${food.protein}g / 100g</div>
     <div class="progress-bar-wrap"><div class="progress-bar-fill ${barCls}" style="width:${proteinPct}%"></div></div>
     <div class="analysis-status" style="margin-top:6px">${proteinStatus}</div>
   </div>
-  <div class="analysis-card">
-    <div class="analysis-label">Fiber vs Target (25g)</div>
+  <div class="analysis-card"><div class="analysis-label">Fiber vs Target (25g)</div>
     <div class="analysis-value">${food.fiber}g / 25g</div>
     <div class="progress-bar-wrap"><div class="progress-bar-fill ${barCls}" style="width:${fiberPct}%"></div></div>
-  </div>`;
-
-  // ── Cardio time + Overall steps ──
-  html += `
+  </div>
   <div class="analysis-row-pair">
-    <div class="analysis-card">
-      <div class="analysis-label">Total Cardio Time</div>
-      <div class="analysis-value">${totalCardioTime}<span style="font-size:.65rem;color:var(--text2)"> min</span></div>
-    </div>
-    <div class="analysis-card">
-      <div class="analysis-label">Overall Steps</div>
+    <div class="analysis-card"><div class="analysis-label">Total Cardio Time</div>
+      <div class="analysis-value">${totalCardioTime}<span style="font-size:.65rem;color:var(--text2)"> min</span></div></div>
+    <div class="analysis-card"><div class="analysis-label">Overall Steps</div>
       <div class="analysis-value">${overallSteps.toLocaleString()}</div>
-      <div class="analysis-sub">incl. treadmill + walking</div>
-    </div>
+      <div class="analysis-sub">incl. treadmill + walking</div></div>
   </div>`;
 
-  // ── Workout completion (Mon–Fri only) ──
   if (isDay) {
     const pct = calcWorkoutCompletion();
-    html += `
-  <div class="analysis-card">
-    <div class="analysis-label">Workout Completion</div>
-    <div class="analysis-value">${pct}%</div>
-    <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:${pct}%"></div></div>
-  </div>`;
+    html += `<div class="analysis-card"><div class="analysis-label">Workout Completion</div>
+      <div class="analysis-value">${pct}%</div>
+      <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:${pct}%"></div></div>
+    </div>`;
   }
 
   $(`${ctx}-analysis`).innerHTML = html;
@@ -1099,19 +1097,19 @@ function updateAnalysis(ctx) {
 
 // ─── AUTO SAVE ────────────────────────────────────────────────────────────────
 function triggerAutoSave(ctx) {
-  if      (ctx === 'day') saveDayData(false);
-  else if (ctx === 'sat') saveSatSun('saturday', false);
-  else if (ctx === 'sun') saveSatSun('sunday',   false);
+  if      (ctx==='day') saveDayData(false);
+  else if (ctx==='sat') saveSatSun('saturday',false);
+  else if (ctx==='sun') saveSatSun('sunday',false);
 }
 
-// ─── SAVE DAY (Mon–Fri) ───────────────────────────────────────────────────────
+// ─── SAVE DAY ─────────────────────────────────────────────────────────────────
 function saveDayData(showMsg=true) {
   const payload = {
-    weightExercises:     collectExercises('wt', 7),
-    bodyweightExercises: collectExercises('bw', 6),
-    warmup: collectWarmup('day-warmup'),
-    cardio: collectCardio('day-cardio'),
-    food:   collectFood('day-food')
+    weightExercises:     collectExercises('wt',7),
+    bodyweightExercises: collectExercises('bw',6),
+    warmup:  collectWarmup('day-warmup'),
+    cardio:  collectCardio('day-cardio'),
+    food:    collectFood('day-food')
   };
   console.log(`[Élan] Saving elan_week_${currentWeek}_${currentDay}:`, payload);
   lsSet(`elan_week_${currentWeek}_${currentDay}`, payload);
@@ -1119,13 +1117,14 @@ function saveDayData(showMsg=true) {
   refreshWeekTile(currentWeek);
 }
 
-// ─── SAVE SAT / SUN ───────────────────────────────────────────────────────────
 function saveSatSun(dayKey, showMsg=true) {
-  const ctx = dayKey === 'saturday' ? 'sat' : 'sun';
+  const ctx = dayKey==='saturday' ? 'sat' : 'sun';
+  const bwPfx = `${ctx}-bw`;
   const payload = {
-    warmup: collectWarmup(`${ctx}-warmup`),
-    cardio: collectCardio(`${ctx}-cardio`),
-    food:   collectFood(`${ctx}-food`)
+    bodyweightExercises: collectExercises(bwPfx, 6),
+    warmup:  collectWarmup(`${ctx}-warmup`),
+    cardio:  collectCardio(`${ctx}-cardio`),
+    food:    collectFood(`${ctx}-food`)
   };
   console.log(`[Élan] Saving elan_week_${currentWeek}_${dayKey}:`, payload);
   lsSet(`elan_week_${currentWeek}_${dayKey}`, payload);
@@ -1133,11 +1132,13 @@ function saveSatSun(dayKey, showMsg=true) {
   refreshWeekTile(currentWeek);
 }
 
-// ─── LOAD DAY SCREEN (Mon–Fri) ────────────────────────────────────────────────
-function loadDayScreen(weekNum, dayKey) {
-  currentWeek = weekNum;
-  currentDay  = dayKey;
+// ─── RENDER HELPERS ───────────────────────────────────────────────────────────
+// Separated render from navigate so popstate can call render without pushing history
+
+function _renderDayScreen(weekNum, dayKey, pushState=true) {
+  currentWeek = weekNum; currentDay = dayKey;
   const info  = DAY_DEFAULTS[dayKey];
+  const bwDef = BW_DEFAULTS_PER_DAY[dayKey] || BW_DEFAULT;
   const saved = lsGet(`elan_week_${weekNum}_${dayKey}`) || {};
   console.log(`[Élan] Loading elan_week_${weekNum}_${dayKey}:`, saved);
 
@@ -1147,147 +1148,55 @@ function loadDayScreen(weekNum, dayKey) {
   $('day-focus-label').textContent = `${fmtFull(dayDate)} · ${info.focus}`;
   $('day-focus-label').style.color = 'var(--blue)';
 
-  // Build exercise sections
-  const wtEl = $('weight-exercises');
-  const bwEl = $('bw-exercises');
-  wtEl.innerHTML = bwEl.innerHTML = '';
-  info.weight.forEach((ex, i) => { wtEl.innerHTML += buildExBlock(i, ex, true,  saved.weightExercises,     'wt'); });
-  info.bw.forEach((ex, i)     => { bwEl.innerHTML += buildExBlock(i, ex, false, saved.bodyweightExercises, 'bw'); });
-  attachSetListeners();
+  const wtEl = $('weight-exercises'); wtEl.innerHTML = '';
+  info.weight.forEach((ex,i) => { wtEl.innerHTML += buildExBlock(i,ex,true,saved.weightExercises,'wt'); });
 
-  // Build warm-up, cardio, food
-  buildWarmup('day-warmup', saved.warmup || null);
-  buildCardio('day-cardio', saved.cardio || null);
-  buildFood('day-food',     saved.food   || null);
+  const bwEl = $('bw-exercises'); bwEl.innerHTML = '';
+  bwDef.forEach((ex,i) => { bwEl.innerHTML += buildExBlock(i,ex,false,saved.bodyweightExercises,'bw'); });
 
+  attachSetListeners('day');
+  buildWarmup('day-warmup', saved.warmup||null);
+  buildCardio('day-cardio', saved.cardio||null);
+  buildFood('day-food',     saved.food||null);
   updateAnalysis('day');
-  attachExInputListeners();
-  showScreen('screen-day');
+  attachExInputListeners('day');
+  showScreen('screen-day', pushState);
 }
 
-// ─── LOAD SAT / SUN ───────────────────────────────────────────────────────────
-function loadSatSunScreen(weekNum, dayKey) {
-  currentWeek = weekNum;
-  currentDay  = dayKey;
+function _renderSatSunScreen(weekNum, dayKey, pushState=true) {
+  currentWeek = weekNum; currentDay = dayKey;
   const saved  = lsGet(`elan_week_${weekNum}_${dayKey}`) || {};
   console.log(`[Élan] Loading elan_week_${weekNum}_${dayKey}:`, saved);
-  const ctx    = dayKey === 'saturday' ? 'sat' : 'sun';
-  buildWarmup(`${ctx}-warmup`, saved.warmup || null);
-  buildCardio(`${ctx}-cardio`, saved.cardio || null);
-  buildFood(`${ctx}-food`,     saved.food   || null);
+  const ctx    = dayKey==='saturday' ? 'sat' : 'sun';
+  const bwPfx  = `${ctx}-bw`;
+  const bwEl   = $(`${ctx}-bw-exercises`); bwEl.innerHTML = '';
+  BW_DEFAULT.forEach((ex,i) => { bwEl.innerHTML += buildExBlock(i,ex,false,saved.bodyweightExercises,bwPfx); });
+  attachSetListeners(ctx);
+  buildWarmup(`${ctx}-warmup`, saved.warmup||null);
+  buildCardio(`${ctx}-cardio`, saved.cardio||null);
+  buildFood(`${ctx}-food`,     saved.food||null);
   updateAnalysis(ctx);
-  showScreen(dayKey === 'saturday' ? 'screen-sat' : 'screen-sun');
+  attachExInputListeners(ctx);
+  showScreen(dayKey==='saturday' ? 'screen-sat' : 'screen-sun', pushState);
 }
 
-// ─── SET CHANGE LISTENER ──────────────────────────────────────────────────────
-function attachSetListeners() {
-  QA('.sets-select').forEach(sel => {
-    sel.removeEventListener('change', onSetsChange);
-    sel.addEventListener('change', onSetsChange);
-  });
-}
-
-function onSetsChange(e) {
-  const sel = e.target;
-  const idx = parseInt(sel.dataset.idx);
-  const pfx = sel.dataset.pfx;
-  const num = parseInt(sel.value);
-  const hw  = pfx === 'wt';
-  const con = $(`${pfx}-sets-${idx}`);
-  if (!con) return;
-  const existing = [];
-  for (let s = 0; s < 6; s++) {
-    const rEl = con.querySelector(`input[data-si="${s}"][data-field="reps"]`);
-    const wEl = con.querySelector(`input[data-si="${s}"][data-field="weight"]`);
-    existing.push({ reps: rEl?.value || '', weight: wEl?.value || '' });
-  }
-  con.innerHTML = buildSetRows(num, hw, existing);
-  con.querySelectorAll('input').forEach(inp => {
-    inp.addEventListener('input', () => updateAnalysis('day'));
-    inp.addEventListener('blur',  () => triggerAutoSave('day'));
-  });
-}
-
-function attachExInputListeners() {
-  QA('.ex-select, .set-input').forEach(el => {
-    el.addEventListener('input', () => updateAnalysis('day'));
-    el.addEventListener('blur',  () => triggerAutoSave('day'));
-  });
-}
-
-// ─── HOME SCREEN ──────────────────────────────────────────────────────────────
-function buildHomeScreen() {
-  const grid = $('weeks-grid');
-  grid.innerHTML = '';
-  for (let w = 1; w <= 52; w++) {
-    const dates = getWeekDates(w);
-    grid.innerHTML += buildWeekTileHTML(w, fmtRange(dates.start, dates.end), getWeekProgress(w));
-  }
-  grid.querySelectorAll('.week-tile').forEach(tile => {
-    tile.addEventListener('click', () => loadWeekScreen(parseInt(tile.dataset.week)));
-  });
-}
-
-function buildWeekTileHTML(w, dateStr, progress) {
-  const dots = WEEKDAYS.map(d => {
-    const f  = progress[d];
-    const dc = d==='saturday' ? 'sat' : d==='sunday' ? 'sun' : '';
-    return `<div class="dot ${dc} ${f ? 'filled' : ''}"></div>`;
-  }).join('');
-  const filled = Object.values(progress).filter(Boolean).length;
-  const pct    = Math.round((filled / 7) * 100);
-  return `<div class="week-tile" data-week="${w}" id="week-tile-${w}">
-    <div>
-      <div class="week-tile-label">Week ${w}</div>
-      <div class="week-tile-dates">${dateStr}</div>
-    </div>
-    <div class="week-tile-right">
-      <div class="week-progress-dots">${dots}</div>
-      <div class="week-tile-pct">${pct > 0 ? pct + '% done' : ''}</div>
-    </div>
-  </div>`;
-}
-
-function refreshWeekTile(w) {
-  const tile = $(`week-tile-${w}`);
-  if (!tile) return;
-  const progress = getWeekProgress(w);
-  const dots = WEEKDAYS.map(d => {
-    const f  = progress[d];
-    const dc = d==='saturday' ? 'sat' : d==='sunday' ? 'sun' : '';
-    return `<div class="dot ${dc} ${f ? 'filled' : ''}"></div>`;
-  }).join('');
-  const filled = Object.values(progress).filter(Boolean).length;
-  const pct    = Math.round((filled / 7) * 100);
-  tile.querySelector('.week-progress-dots').innerHTML = dots;
-  tile.querySelector('.week-tile-pct').textContent    = pct > 0 ? pct + '% done' : '';
-}
-
-function getWeekProgress(w) {
-  const out = {};
-  WEEKDAYS.forEach(d => { out[d] = !!lsGet(`elan_week_${w}_${d}`); });
-  return out;
-}
-
-// ─── WEEK SCREEN ──────────────────────────────────────────────────────────────
-function loadWeekScreen(weekNum) {
+function _renderWeekScreen(weekNum, pushState=true) {
   currentWeek = weekNum;
   const dates = getWeekDates(weekNum);
   $('week-title').textContent = `Week ${weekNum} · ${fmtRange(dates.start, dates.end)}`;
 
   const dayConf = [
-    { key:'monday',    label:'Monday',    cls:'blue',  sub:'' },
-    { key:'tuesday',   label:'Tuesday',   cls:'blue',  sub:'' },
-    { key:'wednesday', label:'Wednesday', cls:'blue',  sub:'' },
-    { key:'thursday',  label:'Thursday',  cls:'blue',  sub:'' },
-    { key:'friday',    label:'Friday',    cls:'blue',  sub:'' },
-    { key:'saturday',  label:'Saturday',  cls:'amber', sub:'Rest · Cheat Day' },
-    { key:'sunday',    label:'Sunday',    cls:'teal',  sub:'Fasting Day' },
+    {key:'monday',    label:'Monday',    cls:'blue',  sub:''},
+    {key:'tuesday',   label:'Tuesday',   cls:'blue',  sub:''},
+    {key:'wednesday', label:'Wednesday', cls:'blue',  sub:''},
+    {key:'thursday',  label:'Thursday',  cls:'blue',  sub:''},
+    {key:'friday',    label:'Friday',    cls:'blue',  sub:''},
+    {key:'saturday',  label:'Saturday',  cls:'amber', sub:'Rest · Cheat Day'},
+    {key:'sunday',    label:'Sunday',    cls:'teal',  sub:'Fasting Day'},
   ];
 
-  const grid = $('days-grid');
-  grid.innerHTML = '';
-  dayConf.forEach((d, i) => {
+  const grid = $('days-grid'); grid.innerHTML = '';
+  dayConf.forEach((d,i) => {
     const dayDate = dates.days[i];
     const saved   = !!lsGet(`elan_week_${weekNum}_${d.key}`);
     grid.innerHTML += `<div class="day-tile ${d.cls}" data-day="${d.key}">
@@ -1296,21 +1205,148 @@ function loadWeekScreen(weekNum) {
         <div class="day-date">${fmt(dayDate)}</div>
         ${d.sub ? `<div class="day-sub">${d.sub}</div>` : ''}
       </div>
-      <div class="day-check">${saved ? '✅' : ''}</div>
+      <div class="day-check">${saved?'✅':''}</div>
     </div>`;
   });
 
   grid.querySelectorAll('.day-tile').forEach(tile => {
     tile.addEventListener('click', () => {
       const day = tile.dataset.day;
-      if      (day === 'saturday') loadSatSunScreen(weekNum, 'saturday');
-      else if (day === 'sunday')   loadSatSunScreen(weekNum, 'sunday');
-      else                         loadDayScreen(weekNum, day);
+      if      (day==='saturday') _renderSatSunScreen(weekNum,'saturday');
+      else if (day==='sunday')   _renderSatSunScreen(weekNum,'sunday');
+      else                       _renderDayScreen(weekNum, day);
     });
   });
 
-  $('go-bodystats').onclick = () => loadBodyStats(weekNum);
-  showScreen('screen-week');
+  $('go-bodystats').onclick = () => _renderBodyStats(weekNum);
+  showScreen('screen-week', pushState);
+}
+
+function _renderBodyStats(weekNum, pushState=true) {
+  currentWeek = weekNum;
+  $('bodystats-title').textContent = `Body Stats · Week ${weekNum}`;
+  const s = lsGet(`elan_week_${weekNum}_bodystats`) || {};
+  BS_FIELDS.forEach(f => { const el=$(`bs-${f}`); if(el) el.value=safeVal(s[f]); });
+  const ol=$('bs-obesityLevel'); if(ol) ol.value=s.obesityLevel||'';
+  updateBmiSuggest();
+  showScreen('screen-bodystats', pushState);
+}
+
+// ─── SET CHANGE LISTENER ──────────────────────────────────────────────────────
+function attachSetListeners(ctx) {
+  QA('.sets-select').forEach(sel => {
+    sel.removeEventListener('change', onSetsChange);
+    sel.addEventListener('change', onSetsChange);
+  });
+}
+
+function onSetsChange(e) {
+  const sel    = e.target;
+  const idx    = parseInt(sel.dataset.idx);
+  const pfx    = sel.dataset.pfx;
+  const num    = parseInt(sel.value);
+  const block  = document.querySelector(`.exercise-block[data-idx="${idx}"][data-pfx="${pfx}"]`);
+  const isTime = block ? block.dataset.isTime === 'true' : false;
+  const hw     = pfx === 'wt';
+  const con    = $(`${pfx}-sets-${idx}`);
+  if (!con) return;
+
+  const existing = [];
+  for (let s=0;s<6;s++) {
+    const tEl = con.querySelector(`input[data-si="${s}"][data-field="timeSeconds"]`);
+    const rEl = con.querySelector(`input[data-si="${s}"][data-field="reps"]`);
+    const wEl = con.querySelector(`input[data-si="${s}"][data-field="weight"]`);
+    existing.push({ timeSeconds:tEl?.value||'', reps:rEl?.value||'', weight:wEl?.value||'' });
+  }
+
+  // Determine context for listener attachment
+  const ctx = pfx.startsWith('sat') ? 'sat' : pfx.startsWith('sun') ? 'sun' : 'day';
+  con.innerHTML = buildSetRows(num, hw, isTime, existing);
+  con.querySelectorAll('input').forEach(inp => {
+    inp.addEventListener('input', () => updateAnalysis(ctx));
+    inp.addEventListener('blur',  () => triggerAutoSave(ctx));
+  });
+}
+
+// When exercise name changes, the plank detection must update the set rows
+function onExSelectChange(e) {
+  const sel   = e.target;
+  const idx   = parseInt(sel.dataset.idx);
+  const pfx   = sel.dataset.pfx;
+  const block = document.querySelector(`.exercise-block[data-idx="${idx}"][data-pfx="${pfx}"]`);
+  if (!block) return;
+  const newName  = sel.value;
+  const isTime   = isPlankType(newName);
+  block.dataset.isTime = isTime;
+  const numSets  = parseInt(block.querySelector('.sets-select').value)||3;
+  const hw       = pfx==='wt';
+  const con      = $(`${pfx}-sets-${idx}`);
+  if (!con) return;
+  const ctx = pfx.startsWith('sat') ? 'sat' : pfx.startsWith('sun') ? 'sun' : 'day';
+  con.innerHTML = buildSetRows(numSets, hw, isTime, null);
+  con.querySelectorAll('input').forEach(inp => {
+    inp.addEventListener('input', () => updateAnalysis(ctx));
+    inp.addEventListener('blur',  () => triggerAutoSave(ctx));
+  });
+}
+
+function attachExInputListeners(ctx) {
+  QA('.ex-select').forEach(el => {
+    el.addEventListener('change', onExSelectChange);
+    el.addEventListener('input',  () => updateAnalysis(ctx));
+    el.addEventListener('blur',   () => triggerAutoSave(ctx));
+  });
+  QA('.set-input').forEach(el => {
+    el.addEventListener('input', () => updateAnalysis(ctx));
+    el.addEventListener('blur',  () => triggerAutoSave(ctx));
+  });
+}
+
+// ─── HOME SCREEN ──────────────────────────────────────────────────────────────
+function buildHomeScreen() {
+  const grid = $('weeks-grid'); grid.innerHTML='';
+  for (let w=1;w<=52;w++) {
+    const dates = getWeekDates(w);
+    grid.innerHTML += buildWeekTileHTML(w, fmtRange(dates.start,dates.end), getWeekProgress(w));
+  }
+  grid.querySelectorAll('.week-tile').forEach(tile => {
+    tile.addEventListener('click', () => _renderWeekScreen(parseInt(tile.dataset.week)));
+  });
+}
+
+function buildWeekTileHTML(w, dateStr, progress) {
+  const dots = WEEKDAYS.map(d => {
+    const f=progress[d]; const dc=d==='saturday'?'sat':d==='sunday'?'sun':'';
+    return `<div class="dot ${dc} ${f?'filled':''}"></div>`;
+  }).join('');
+  const filled = Object.values(progress).filter(Boolean).length;
+  const pct    = Math.round((filled/7)*100);
+  return `<div class="week-tile" data-week="${w}" id="week-tile-${w}">
+    <div><div class="week-tile-label">Week ${w}</div><div class="week-tile-dates">${dateStr}</div></div>
+    <div class="week-tile-right">
+      <div class="week-progress-dots">${dots}</div>
+      <div class="week-tile-pct">${pct>0?pct+'% done':''}</div>
+    </div>
+  </div>`;
+}
+
+function refreshWeekTile(w) {
+  const tile=$(`week-tile-${w}`); if(!tile) return;
+  const progress=getWeekProgress(w);
+  const dots=WEEKDAYS.map(d => {
+    const f=progress[d]; const dc=d==='saturday'?'sat':d==='sunday'?'sun':'';
+    return `<div class="dot ${dc} ${f?'filled':''}"></div>`;
+  }).join('');
+  const filled=Object.values(progress).filter(Boolean).length;
+  const pct=Math.round((filled/7)*100);
+  tile.querySelector('.week-progress-dots').innerHTML=dots;
+  tile.querySelector('.week-tile-pct').textContent=pct>0?pct+'% done':'';
+}
+
+function getWeekProgress(w) {
+  const out={};
+  WEEKDAYS.forEach(d => { out[d]=!!lsGet(`elan_week_${w}_${d}`); });
+  return out;
 }
 
 // ─── BODY STATS ───────────────────────────────────────────────────────────────
@@ -1320,101 +1356,62 @@ const BS_FIELDS = [
   'muscleMass','weightWithoutFat'
 ];
 
-function loadBodyStats(weekNum) {
-  currentWeek = weekNum;
-  $('bodystats-title').textContent = `Body Stats · Week ${weekNum}`;
-  const s = lsGet(`elan_week_${weekNum}_bodystats`) || {};
-  BS_FIELDS.forEach(f => {
-    const el = $(`bs-${f}`);
-    if (el) el.value = safeVal(s[f]);
-  });
-  const ol = $('bs-obesityLevel');
-  if (ol) ol.value = s.obesityLevel || '';
-  updateBmiSuggest();
-  showScreen('screen-bodystats');
-}
-
 function saveBodyStats() {
-  const data = {};
-  BS_FIELDS.forEach(f => {
-    const el = $(`bs-${f}`);
-    data[f]  = el ? n(el.value) : 0;
-  });
-  data.obesityLevel = $('bs-obesityLevel').value;
-  console.log(`[Élan] Saving elan_week_${currentWeek}_bodystats:`, data);
+  const data={};
+  BS_FIELDS.forEach(f => { const el=$(`bs-${f}`); data[f]=el?n(el.value):0; });
+  data.obesityLevel=$('bs-obesityLevel').value;
   lsSet(`elan_week_${currentWeek}_bodystats`, data);
   showToast('Body stats saved ✓');
 }
 
 function updateBmiSuggest() {
-  const bmi     = n($('bs-bmi')?.value);
-  const suggest = bmiToObesity(bmi);
-  const el      = $('bmi-suggest');
-  if (!el) return;
+  const bmi=n($('bs-bmi')?.value); const suggest=bmiToObesity(bmi);
+  const el=$('bmi-suggest'); if(!el) return;
   if (suggest) {
-    el.textContent = `Suggested: ${suggest}`;
-    const ol = $('bs-obesityLevel');
-    if (ol && !ol.value) ol.value = suggest;
-  } else {
-    el.textContent = '';
-  }
+    el.textContent=`Suggested: ${suggest}`;
+    const ol=$('bs-obesityLevel'); if(ol&&!ol.value) ol.value=suggest;
+  } else { el.textContent=''; }
 }
-
 $('bs-bmi')?.addEventListener('input', updateBmiSuggest);
 
 // ─── SETTINGS ─────────────────────────────────────────────────────────────────
 function openSettings() {
-  const s = lsGet('elan_settings');
-  if (s && s.startDate) $('start-date-input').value = s.startDate;
+  const s=lsGet('elan_settings');
+  if(s&&s.startDate) $('start-date-input').value=s.startDate;
   $('settings-modal').classList.add('open');
 }
 function closeSettings() { $('settings-modal').classList.remove('open'); }
-
 function saveStartDate() {
-  const val = $('start-date-input').value;
-  if (!val) { showToast('Please select a date'); return; }
-  const s = lsGet('elan_settings') || {};
-  s.startDate = val;
-  lsSet('elan_settings', s);
-  closeSettings();
-  buildHomeScreen();
+  const val=$('start-date-input').value;
+  if(!val){ showToast('Please select a date'); return; }
+  const s=lsGet('elan_settings')||{}; s.startDate=val;
+  lsSet('elan_settings',s); closeSettings(); buildHomeScreen();
   showToast('Start date saved ✓');
 }
 
 // ─── EXPORT / IMPORT ──────────────────────────────────────────────────────────
 function exportData() {
-  const out = {};
-  for (let i = 0; i < localStorage.length; i++) {
-    const k = localStorage.key(i);
-    if (k.startsWith('elan_')) {
-      try { out[k] = JSON.parse(localStorage.getItem(k)); }
-      catch(e) { out[k] = localStorage.getItem(k); }
+  const out={};
+  for(let i=0;i<localStorage.length;i++){
+    const k=localStorage.key(i);
+    if(k.startsWith('elan_')){
+      try{out[k]=JSON.parse(localStorage.getItem(k));}catch(e){out[k]=localStorage.getItem(k);}
     }
   }
-  const blob = new Blob([JSON.stringify(out, null, 2)], { type: 'application/json' });
-  const url  = URL.createObjectURL(blob);
-  const a    = document.createElement('a');
-  a.href     = url;
-  a.download = `elan-backup-${new Date().toISOString().slice(0,10)}.json`;
-  a.click();
-  URL.revokeObjectURL(url);
-  showToast('Data exported ✓');
+  const blob=new Blob([JSON.stringify(out,null,2)],{type:'application/json'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a'); a.href=url;
+  a.download=`elan-backup-${new Date().toISOString().slice(0,10)}.json`; a.click();
+  URL.revokeObjectURL(url); showToast('Data exported ✓');
 }
-
 function importData(file) {
-  const reader = new FileReader();
-  reader.onload = e => {
-    try {
-      const data = JSON.parse(e.target.result);
-      Object.entries(data).forEach(([k, v]) => {
-        localStorage.setItem(k, typeof v === 'string' ? v : JSON.stringify(v));
-      });
-      closeSettings();
-      buildHomeScreen();
-      showToast('Data imported ✓');
-    } catch(err) {
-      showToast('Import failed — invalid file');
-    }
+  const reader=new FileReader();
+  reader.onload=e=>{
+    try{
+      const data=JSON.parse(e.target.result);
+      Object.entries(data).forEach(([k,v])=>{ localStorage.setItem(k,typeof v==='string'?v:JSON.stringify(v)); });
+      closeSettings(); buildHomeScreen(); showToast('Data imported ✓');
+    }catch(err){ showToast('Import failed — invalid file'); }
   };
   reader.readAsText(file);
 }
@@ -1422,24 +1419,28 @@ function importData(file) {
 // ─── EVENT LISTENERS ──────────────────────────────────────────────────────────
 $('settings-btn').addEventListener('click', openSettings);
 $('modal-close-btn').addEventListener('click', closeSettings);
-$('settings-modal').addEventListener('click', e => { if (e.target === $('settings-modal')) closeSettings(); });
+$('settings-modal').addEventListener('click', e=>{ if(e.target===$('settings-modal')) closeSettings(); });
 $('save-start-date').addEventListener('click', saveStartDate);
 $('export-btn').addEventListener('click', exportData);
-$('import-btn-trigger').addEventListener('click', () => $('import-file-input').click());
-$('import-file-input').addEventListener('change', e => { if (e.target.files[0]) importData(e.target.files[0]); });
+$('import-btn-trigger').addEventListener('click', ()=>$('import-file-input').click());
+$('import-file-input').addEventListener('change', e=>{ if(e.target.files[0]) importData(e.target.files[0]); });
 
-$('week-back').addEventListener('click',      () => showScreen('screen-home'));
-$('bodystats-back').addEventListener('click', () => showScreen('screen-week'));
-$('day-back').addEventListener('click',       () => showScreen('screen-week'));
-$('sat-back').addEventListener('click',       () => showScreen('screen-week'));
-$('sun-back').addEventListener('click',       () => showScreen('screen-week'));
+// Back buttons — use history.back() so they unify with Android back gesture
+$('week-back').addEventListener('click',      () => history.back());
+$('bodystats-back').addEventListener('click', () => history.back());
+$('day-back').addEventListener('click',       () => history.back());
+$('sat-back').addEventListener('click',       () => history.back());
+$('sun-back').addEventListener('click',       () => history.back());
 
 $('save-bodystats').addEventListener('click', saveBodyStats);
 $('save-day').addEventListener('click',       () => saveDayData(true));
-$('save-sat').addEventListener('click',       () => saveSatSun('saturday', true));
-$('save-sun').addEventListener('click',       () => saveSatSun('sunday',   true));
+$('save-sat').addEventListener('click',       () => saveSatSun('saturday',true));
+$('save-sun').addEventListener('click',       () => saveSatSun('sunday',true));
 
 // ─── INIT ─────────────────────────────────────────────────────────────────────
+// Push initial home state so there's always a bottom entry in the stack
+history.replaceState({ screen:'screen-home', week:1, day:'monday' }, '', '');
+
 buildHomeScreen();
 
 if ('serviceWorker' in navigator) {
